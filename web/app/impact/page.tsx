@@ -1,0 +1,145 @@
+import Image from "next/image";
+import { Container, Section, Eyebrow } from "@/components/ui/container";
+import { site } from "@/lib/site";
+
+export const metadata = { title: "Impact" };
+
+const milestones = [
+  {
+    year: "2024",
+    title: "Federation incorporated",
+    body: "Shrianna Protsahan Consortium registered on 9 March under the MP Companies Act, with five women smallholders on the founding board.",
+  },
+  {
+    year: "2024",
+    title: "₹80 cr fund secured",
+    body: "State Price Stabilization Fund approves an interest-free loan to underwrite procurement.",
+  },
+  {
+    year: "2025",
+    title: "First procurement cycle",
+    body: "Rabi pilot procures 4,200 MT of Kodo & Kutki across Mandla and Dindori. All payments via DBT.",
+  },
+  {
+    year: "2025",
+    title: "Bhopal mill commissioned",
+    body: "Federation-owned processing unit at Beej Bhawan goes live — de-husking, grading and packing under one roof.",
+  },
+  {
+    year: "2025",
+    title: "Kharif 2025 procurement",
+    body: "Target of 30,000 MT across eleven tribal districts; first kilo on shop shelves by January 2026.",
+  },
+];
+
+export default function ImpactPage() {
+  return (
+    <>
+      <Section className="pb-0">
+        <Container size="narrow">
+          <Eyebrow>Impact</Eyebrow>
+          <h1 className="mt-4 font-serif text-5xl leading-[1.05] tracking-tight sm:text-6xl">
+            Numbers that turn into harvests.
+          </h1>
+          <p className="mt-6 text-xl leading-relaxed text-muted-foreground">
+            Every figure on this page traces back to a farmer&apos;s bank
+            account, a quintal weighed at a procurement centre, or a grain
+            polished at the Bhopal mill.
+          </p>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container size="wide">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {site.impact.map((s) => (
+              <div
+                key={s.label}
+                className="rounded-2xl border border-border bg-card p-7"
+              >
+                <p className="font-serif text-5xl leading-none text-primary">
+                  {s.stat}
+                  <span className="ml-1 text-xl text-muted-foreground">
+                    {s.suffix}
+                  </span>
+                </p>
+                <p className="mt-4 text-sm leading-snug text-muted-foreground">
+                  {s.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      <Section className="bg-muted/40">
+        <Container size="wide">
+          <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr]">
+            <div className="lg:sticky lg:top-28 lg:self-start">
+              <Eyebrow>Timeline</Eyebrow>
+              <h2 className="mt-3 font-serif text-4xl tracking-tight sm:text-5xl">
+                How we got here.
+              </h2>
+              <p className="mt-5 text-muted-foreground">
+                A federation built in eighteen months — and still finding its
+                shape with every passing harvest.
+              </p>
+            </div>
+
+            <ol className="space-y-10">
+              {milestones.map((m, i) => (
+                <li key={i} className="flex gap-6">
+                  <div className="flex flex-col items-center">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-primary/30 bg-background font-serif text-sm text-primary">
+                      {m.year}
+                    </div>
+                    {i !== milestones.length - 1 && (
+                      <div className="mt-2 h-full w-px flex-1 bg-border" />
+                    )}
+                  </div>
+                  <div className="pb-2">
+                    <h3 className="font-serif text-2xl tracking-tight">
+                      {m.title}
+                    </h3>
+                    <p className="mt-2 leading-relaxed text-muted-foreground">
+                      {m.body}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container size="wide">
+          <div className="overflow-hidden rounded-2xl bg-secondary">
+            <div className="grid lg:grid-cols-2">
+              <div className="relative min-h-[300px]">
+                <Image
+                  src="https://images.bhaskarassets.com/web2images/521/2024/02/12/e3466c22-fd49-49f1-94d0-09da9d644155_1707740807770.jpg"
+                  alt="Kodo Kutki processing plant"
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="px-8 py-14 text-secondary-foreground sm:px-12 lg:px-14">
+                <Eyebrow className="text-accent">Looking ahead</Eyebrow>
+                <h2 className="mt-4 font-serif text-4xl tracking-tight">
+                  Next: 50,000 MT and a second mill in Mandla.
+                </h2>
+                <p className="mt-5 text-secondary-foreground/80">
+                  By Kharif 2026, the federation aims to procure 50,000 MT
+                  across thirteen districts and open a second processing unit
+                  closer to the heart of millet country.
+                </p>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
+    </>
+  );
+}

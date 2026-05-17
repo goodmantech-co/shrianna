@@ -1,0 +1,102 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #faf6ee;
+  --foreground: #1a1a1a;
+  --card: #ffffff;
+  --card-foreground: #1a1a1a;
+  --popover: #ffffff;
+  --popover-foreground: #1a1a1a;
+  --primary: #1fa3cc;
+  --primary-foreground: #ffffff;
+  --secondary: #2d5f3f;
+  --secondary-foreground: #faf6ee;
+  --muted: #efe7d4;
+  --muted-foreground: #5b5346;
+  --accent: #d9b832;
+  --accent-foreground: #1a1a1a;
+  --destructive: #b73e36;
+  --destructive-foreground: #faf6ee;
+  --border: #ddd0b5;
+  --input: #ddd0b5;
+  --ring: #1fa3cc;
+  --radius: 0.625rem;
+
+  --brand-blue: #1fa3cc;
+  --brand-blue-deep: #1781a2;
+  --brand-mustard: #d9b832;
+  --brand-rust: #b73e36;
+  --brand-forest: #2d5f3f;
+  --brand-cream: #faf6ee;
+  --brand-ink: #1a1a1a;
+  --brand-grain: #efe7d4;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-fraunces);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-serif), Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+  ::selection {
+    background-color: var(--brand-ochre);
+    color: var(--brand-ink);
+  }
+}
+
+@layer utilities {
+  .grain {
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(26, 26, 26, 0.04) 1px, transparent 0);
+    background-size: 16px 16px;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
