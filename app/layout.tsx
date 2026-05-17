@@ -3,6 +3,7 @@ import { Inter, Fraunces } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
+import { PromoStrip } from "@/components/layout/promo-strip";
 import { CartProvider } from "@/components/cart/cart-provider";
 
 const inter = Inter({
@@ -82,6 +83,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <CartProvider>
+          <PromoStrip />
           <SiteHeader />
           <main className="flex-1">{children}</main>
           <SiteFooter />

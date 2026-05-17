@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ChevronLeft, MapPin } from "lucide-react";
 import { Container, Section, Eyebrow } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
+import { StarRating } from "@/components/ui/star-rating";
 import { ProductCard } from "@/components/product/product-card";
 import { products, getProduct } from "@/lib/products";
 import { AddToCart } from "./add-to-cart";
@@ -75,7 +76,20 @@ export default async function ProductPage({
                 {product.tagline}
               </p>
 
-              <p className="mt-6 inline-flex items-center gap-2 text-sm text-muted-foreground">
+              <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2">
+                <StarRating
+                  rating={product.rating}
+                  reviews={product.reviews}
+                  size="md"
+                />
+                {product.dietary.map((d) => (
+                  <Badge key={d} variant="outline" className="text-xs">
+                    {d}
+                  </Badge>
+                ))}
+              </div>
+
+              <p className="mt-5 inline-flex items-center gap-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 text-primary" />
                 Sourced from {product.origin}
               </p>

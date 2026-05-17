@@ -15,7 +15,6 @@ The site presents the federation's mission, farmer stories, impact numbers and a
 ## Local development
 
 ```bash
-cd web
 npm install
 npm run dev
 ```
@@ -26,13 +25,12 @@ Then open <http://localhost:3000>.
 
 ```
 shrianna/
-├── PLAN.md             — Original product plan
-├── IMAGES.md           — Image source list (research)
-└── web/                — Next.js app
-    ├── app/            — App Router pages + dynamic OG/icons
-    ├── components/     — UI, brand, layout, cart, product
-    ├── lib/            — products, site config, utils
-    └── public/         — Static assets incl. logo
+├── app/                — App Router pages + dynamic OG/icons
+├── components/         — UI, brand, layout, cart, product
+├── lib/                — products, site config, utils
+├── public/             — Static assets incl. logo
+├── PLAN.md             — Product plan
+└── IMAGES.md           — Image source list (research)
 ```
 
 ## Notes
