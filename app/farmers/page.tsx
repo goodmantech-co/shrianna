@@ -44,7 +44,7 @@ export default function FarmersPage() {
         <Container size="narrow">
           <Eyebrow>The farmers</Eyebrow>
           <h1 className="mt-4 font-serif text-5xl leading-[1.05] tracking-tight sm:text-6xl">
-            5,400 smallholders. Eleven districts. One federation.
+            70,000 farmers. Sixteen districts. One federation.
           </h1>
           <p className="mt-6 text-xl leading-relaxed text-muted-foreground">
             Shrianna pools the harvests of farmer producer organisations

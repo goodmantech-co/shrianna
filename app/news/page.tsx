@@ -9,7 +9,7 @@ const items = [
     date: "14 October 2025",
     type: "Cabinet decision",
     title:
-      "MP Cabinet greenlights Kodo–Kutki procurement for the first time, targets 30,000 MT in Kharif 2025",
+      "Shrianna Federation procures ~28,300 quintals of Kodo–Kutki in its 2025–26 season across 15 districts",
     body: "The Cabinet approved the operational framework of the Shrianna Federation, including an ₹80 crore interest-free loan from the State Price Stabilization Fund and DBT-based farmer incentives.",
     image:
       "https://desitalkchicago.com/wp-content/uploads/2025/10/ANI-20251014124559.jpg",
@@ -18,7 +18,7 @@ const items = [
     date: "5 October 2025",
     type: "Scheme update",
     title:
-      "Rani Durgavati Shri Anna Protsahan Yojana: farmers to receive ₹3,900 per hectare incentive",
+      "Rani Durgavati Shrianna Protsahan Yojana: farmers to receive a ₹1,000 per quintal incentive via DBT",
     body: "Field-level instructions issued by the Farmer Welfare Department detail registration windows, procurement centres and a transparent grievance redressal mechanism.",
     image:
       "https://feminisminindia.com/wp-content/uploads/2022/09/Kodo-Kutki-field-2048x1152.jpg",
@@ -35,8 +35,8 @@ const items = [
   {
     date: "31 July 2024",
     type: "Market",
-    title: "Shrianna packets hit mainstream Bhopal retailers for the first time",
-    body: "Federation-branded Kodo and Kutki appear on shelves at select grocers in Bhopal and Indore — the first commercial outing for the brand.",
+    title: "Narmada Millets packets hit mainstream Bhopal retailers for the first time",
+    body: "Federation-branded Kodo and Kutki products appear on shelves at select grocers in Bhopal and Indore — the first commercial outing for the Narmada Millets brand.",
     image:
       "https://images.bhaskarassets.com/thumb/730x0/web2images/521/2023/07/31/app_169072399764c6669da7049_img-20230730-wa0037.jpg",
   },

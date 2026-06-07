@@ -23,9 +23,11 @@ const badgeStyle: Record<ProductBadge, string> = {
 export function ProductCard({
   product,
   className,
+  view = "grid",
 }: {
   product: Product;
   className?: string;
+  view?: "grid" | "list";
 }) {
   const cheapest = product.packSizes.reduce((min, p) =>
     p.price < min.price ? p : min
@@ -35,11 +37,102 @@ export function ProductCard({
     ? Math.round(((cheapest.mrp! - cheapest.price) / cheapest.mrp!) * 100)
     : 0;
 
+  const Price = (
+    <div className="flex items-baseline gap-2">
+      <p className="text-lg font-semibold tracking-tight tabular-nums text-foreground">
+        {formatPrice(cheapest.price)}
+      </p>
+      {hasMrp && (
+        <p className="text-sm tabular-nums text-muted-foreground line-through">
+          {formatPrice(cheapest.mrp!)}
+        </p>
+      )}
+      {hasMrp && (
+        <span className="text-xs font-semibold text-destructive">
+          {discount}% off
+        </span>
+      )}
+    </div>
+  );
+
+  const PackSizes = (
+    <div className="flex flex-wrap gap-1.5">
+      {product.packSizes.map((s) => (
+        <span
+          key={s.weight}
+          className="rounded-md border border-border bg-muted/40 px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground"
+        >
+          {s.weight}
+        </span>
+      ))}
+    </div>
+  );
+
+  // --- List view -----------------------------------------------------------
+  if (view === "list") {
+    return (
+      <Link
+        href={`/shop/${product.slug}`}
+        className={cn(
+          "group flex gap-4 overflow-hidden rounded-xl border border-border bg-card p-3 transition-all hover:shadow-md sm:gap-5 sm:p-4",
+          className
+        )}
+      >
+        <div className="relative aspect-square w-28 shrink-0 overflow-hidden rounded-lg bg-muted sm:w-40">
+          <Image
+            src={product.hero}
+            alt={product.name}
+            fill
+            sizes="160px"
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          {product.badges?.[0] && (
+            <span
+              className={cn(
+                "absolute left-2 top-2 rounded-full px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wider shadow-sm",
+                badgeStyle[product.badges[0]]
+              )}
+            >
+              {badgeLabel[product.badges[0]]}
+            </span>
+          )}
+        </div>
+
+        <div className="flex min-w-0 flex-1 flex-col">
+          <div className="flex items-center justify-between gap-2">
+            <Badge variant="muted" className="text-[10px]">
+              {product.millet}
+            </Badge>
+            <StarRating rating={product.rating} reviews={product.reviews} />
+          </div>
+          <h3 className="mt-2 font-serif text-lg leading-tight">
+            {product.name}
+          </h3>
+          <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">
+            {product.tagline}
+          </p>
+          <div className="mt-2 hidden sm:block">{PackSizes}</div>
+          <div className="mt-auto flex items-end justify-between gap-3 pt-3">
+            <div>
+              <p className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+                From {cheapest.weight} · {product.district}
+              </p>
+              <div className="mt-0.5">{Price}</div>
+            </div>
+            <QuickAdd product={product} />
+          </div>
+        </div>
+      </Link>
+    );
+  }
+
+  // --- Grid view -----------------------------------------------------------
   return (
     <Link
       href={`/shop/${product.slug}`}
       className={cn(
         "group flex flex-col overflow-hidden rounded-xl border border-border bg-card transition-all hover:-translate-y-0.5 hover:shadow-lg",
+        !product.inStock && "opacity-70",
         className
       )}
     >
@@ -86,23 +179,18 @@ export function ProductCard({
         </div>
 
         <h3 className="mt-3 font-serif text-lg leading-tight">{product.name}</h3>
-        <p className="mt-1 text-sm text-muted-foreground line-clamp-2">
+        <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">
           {product.tagline}
         </p>
 
-        <div className="mt-4 flex items-end justify-between">
+        <div className="mt-3">{PackSizes}</div>
+
+        <div className="mt-4 flex items-end justify-between border-t border-border/60 pt-3">
           <div>
-            <p className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+            <p className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
               From {cheapest.weight}
             </p>
-            <div className="flex items-baseline gap-2">
-              <p className="font-serif text-xl">{formatPrice(cheapest.price)}</p>
-              {hasMrp && (
-                <p className="text-xs text-muted-foreground line-through">
-                  {formatPrice(cheapest.mrp!)}
-                </p>
-              )}
-            </div>
+            <div className="mt-0.5">{Price}</div>
           </div>
           <p className="text-xs text-muted-foreground">{product.district}</p>
         </div>

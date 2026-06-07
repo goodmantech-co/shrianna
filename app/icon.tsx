@@ -32,12 +32,16 @@ export default async function Icon() {
             borderRadius: "50%",
             overflow: "hidden",
             backgroundColor: "#ffffff",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
+          {/* Rendered larger than the frame so the blue badge fills the circle
+              and the source image's white margin is cropped away. */}
           <img
             src={dataUri}
-            width={512}
-            height={512}
+            width={558}
+            height={558}
             style={{ objectFit: "cover" }}
           />
         </div>

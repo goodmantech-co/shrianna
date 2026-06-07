@@ -19,7 +19,7 @@ const fraunces = Fraunces({
   axes: ["opsz"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://shriannafederation.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://shriannafederation.in";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s · Shrianna Federation",
   },
   description:
-    "A farmer-owned consortium reviving Kodo, Kutki and Ragi across eleven tribal districts of Madhya Pradesh. Procured at fair prices, milled in Bhopal, paid directly to women farmers.",
+    "A farmer-owned consortium reviving Kodo, Kutki and other millets across Madhya Pradesh. Procured at fair prices, processed under the Narmada Millets brand, paid directly to farmers via DBT.",
   keywords: [
     "millet",
     "kodo",
@@ -38,8 +38,9 @@ export const metadata: Metadata = {
     "Madhya Pradesh",
     "tribal farmers",
     "Shri Anna",
+    "Narmada Millets",
     "Shrianna Federation",
-    "Rani Durgavati Shri Anna Protsahan Yojana",
+    "Rani Durgavati Shrianna Protsahan Yojana",
     "Bhopal millets",
   ],
   authors: [{ name: "Shrianna Federation" }],
@@ -50,7 +51,7 @@ export const metadata: Metadata = {
     siteName: "Shrianna Federation",
     title: "Shrianna Federation — Millets from the heart of Madhya Pradesh",
     description:
-      "Ancient millets. Grown by women. From eleven tribal districts of MP. Kodo, Kutki and Ragi procured at fair prices, milled honestly, paid directly via DBT.",
+      "Ancient millets. Grown by women. From sixteen districts of MP. Kodo, Kutki and other millets procured at fair prices, sold as Narmada Millets, paid directly via DBT.",
     url: siteUrl,
     locale: "en_IN",
   },
@@ -58,7 +59,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Shrianna Federation — Millets from the heart of Madhya Pradesh",
     description:
-      "A farmer-owned millet federation under the Rani Durgavati Shri Anna Protsahan Yojana. Reviving Kodo, Kutki and Ragi — grown by women, paid directly via DBT.",
+      "A farmer-owned millet federation under the Rani Durgavati Shrianna Protsahan Yojana. Reviving Kodo, Kutki and other millets — sold under the Narmada Millets brand, paid directly via DBT.",
   },
   robots: {
     index: true,

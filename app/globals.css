@@ -10,25 +10,25 @@
   --card-foreground: #1a1a1a;
   --popover: #ffffff;
   --popover-foreground: #1a1a1a;
-  --primary: #1fa3cc;
-  --primary-foreground: #ffffff;
+  --primary: #b0402f;
+  --primary-foreground: #faf6ee;
   --secondary: #2d5f3f;
   --secondary-foreground: #faf6ee;
   --muted: #efe7d4;
   --muted-foreground: #5b5346;
   --accent: #d9b832;
   --accent-foreground: #1a1a1a;
-  --destructive: #b73e36;
+  --destructive: #cf4327;
   --destructive-foreground: #faf6ee;
   --border: #ddd0b5;
   --input: #ddd0b5;
-  --ring: #1fa3cc;
+  --ring: #b0402f;
   --radius: 0.625rem;
 
   --brand-blue: #1fa3cc;
   --brand-blue-deep: #1781a2;
   --brand-mustard: #d9b832;
-  --brand-rust: #b73e36;
+  --brand-rust: #b0402f;
   --brand-forest: #2d5f3f;
   --brand-cream: #faf6ee;
   --brand-ink: #1a1a1a;
@@ -55,6 +55,12 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-blue-deep: var(--brand-blue-deep);
+  --color-brand-mustard: var(--brand-mustard);
+  --color-brand-rust: var(--brand-rust);
+  --color-brand-forest: var(--brand-forest);
 
   --font-sans: var(--font-inter);
   --font-serif: var(--font-fraunces);
@@ -85,7 +91,7 @@
     letter-spacing: -0.02em;
   }
   ::selection {
-    background-color: var(--brand-ochre);
+    background-color: var(--brand-mustard);
     color: var(--brand-ink);
   }
 }

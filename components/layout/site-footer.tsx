@@ -14,8 +14,8 @@ export function SiteFooter() {
             </div>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
               A farmer-owned millet federation incorporated under the
-              Rani&nbsp;Durgavati Shri&nbsp;Anna Protsahan Yojana, Government of
-              Madhya Pradesh.
+              Rani&nbsp;Durgavati Shrianna Protsahan Yojana, Government of Madhya
+              Pradesh. Products sold under the Narmada&nbsp;Millets brand.
             </p>
             <p className="mt-4 text-xs uppercase tracking-[0.18em] text-muted-foreground">
               CIN · {site.cin}
@@ -81,6 +81,7 @@ export function SiteFooter() {
             </address>
             <p className="mt-3 text-sm text-muted-foreground">{site.phone}</p>
             <p className="text-sm text-muted-foreground">{site.email}</p>
+            <p className="text-sm text-muted-foreground">{site.website}</p>
           </div>
         </div>
 

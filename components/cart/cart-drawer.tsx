@@ -11,6 +11,34 @@ import { formatPrice } from "@/lib/utils";
 export function CartDrawer() {
   const { items, isOpen, close, remove, setQty } = useCart();
   const total = useCartTotal();
+  const [checkingOut, setCheckingOut] = React.useState(false);
+  const [error, setError] = React.useState<string | null>(null);
+
+  const checkout = async () => {
+    setCheckingOut(true);
+    setError(null);
+    try {
+      const res = await fetch("/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          items: items.map((i) => ({
+            productSlug: i.productSlug,
+            weight: i.weight,
+            quantity: i.quantity,
+          })),
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.invoiceUrl) {
+        throw new Error(data.error || "Checkout failed. Please try again.");
+      }
+      window.location.href = data.invoiceUrl;
+    } catch (e) {
+      setError((e as Error).message);
+      setCheckingOut(false);
+    }
+  };
 
   React.useEffect(() => {
     if (isOpen) {
@@ -131,11 +159,19 @@ export function CartDrawer() {
               <span className="text-sm text-muted-foreground">Subtotal</span>
               <span className="font-serif text-2xl">{formatPrice(total)}</span>
             </div>
-            <Button asChild size="lg" className="w-full" onClick={close}>
-              <Link href="/checkout">Checkout</Link>
+            <Button
+              size="lg"
+              className="w-full"
+              onClick={checkout}
+              disabled={checkingOut}
+            >
+              {checkingOut ? "Taking you to checkout…" : "Checkout"}
             </Button>
+            {error && (
+              <p className="mt-3 text-center text-xs text-destructive">{error}</p>
+            )}
             <p className="mt-3 text-center text-xs text-muted-foreground">
-              Showcase site — no real orders are placed.
+              Secure checkout powered by Shopify.
             </p>
           </footer>
         )}

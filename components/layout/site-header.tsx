@@ -42,7 +42,7 @@ export function SiteHeader() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-sm text-foreground/80 transition-colors hover:text-primary"
+                  className="text-sm text-foreground/80 transition-colors hover:text-brand-blue-deep"
                 >
                   {item.label}
                 </Link>

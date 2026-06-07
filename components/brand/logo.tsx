@@ -37,7 +37,7 @@ export function LogoMark({ className }: { className?: string }) {
         alt="Shrianna Federation"
         fill
         sizes="64px"
-        className="object-cover"
+        className="scale-[1.09] object-cover"
         priority
       />
     </div>

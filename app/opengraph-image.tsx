@@ -46,7 +46,7 @@ export default async function OGImage() {
               fontFamily: "system-ui",
             }}
           >
-            Rani Durgavati Shri Anna Protsahan Yojana
+            Rani Durgavati Shrianna Protsahan Yojana
           </div>
 
           <div style={{ display: "flex", flexDirection: "column" }}>
@@ -91,8 +91,8 @@ export default async function OGImage() {
                 lineHeight: 1.4,
               }}
             >
-              A farmer-owned federation reviving Kodo, Kutki and Ragi from
-              eleven tribal districts of Madhya Pradesh.
+              A farmer-owned federation reviving Kodo, Kutki and other millets
+              across Madhya Pradesh — sold as Narmada Millets.
             </div>
           </div>
 
@@ -107,7 +107,7 @@ export default async function OGImage() {
               textTransform: "uppercase",
             }}
           >
-            shriannafederation.com
+            shriannafederation.in
           </div>
         </div>
 

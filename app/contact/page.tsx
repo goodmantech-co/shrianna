@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone, Globe } from "lucide-react";
 import { Container, Section, Eyebrow } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { site } from "@/lib/site";
@@ -33,6 +33,15 @@ export default function ContactPage() {
             <ContactCard icon={Mail} title="Write">
               <a href={`mailto:${site.email}`} className="hover:text-primary">
                 {site.email}
+              </a>
+            </ContactCard>
+
+            <ContactCard icon={Globe} title="Online">
+              <a
+                href={`https://${site.website.replace(/^www\./, "")}`}
+                className="hover:text-primary"
+              >
+                {site.website}
               </a>
             </ContactCard>
 

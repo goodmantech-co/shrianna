@@ -12,8 +12,9 @@ export const site = {
     state: "Madhya Pradesh",
     pin: "462011",
   },
-  phone: "+91 755 277 5048",
-  email: "hello@shriannafederation.com",
+  phone: "+91 74009 92084",
+  email: "shriannafederation@gmail.com",
+  website: "www.shriannafederation.in",
   nav: [
     { label: "Story", href: "/about" },
     { label: "Shop", href: "/shop" },
@@ -24,13 +25,13 @@ export const site = {
     { label: "Contact", href: "/contact" },
   ],
   impact: [
-    { stat: "30,000", suffix: "MT", label: "Procurement target, Kharif 2025" },
-    { stat: "11", suffix: "", label: "Tribal districts served" },
-    { stat: "₹4,500", suffix: "/qtl", label: "Paid directly to farmers via DBT" },
-    { stat: "5,400+", suffix: "", label: "Farmer-members across MP" },
+    { stat: "70,000", suffix: "", label: "Millet farmers supported" },
+    { stat: "25+", suffix: "", label: "FPOs united across MP" },
+    { stat: "16", suffix: "", label: "Districts of Madhya Pradesh" },
+    { stat: "₹7.28", suffix: " Cr", label: "Paid to farmers via DBT (2025–26)" },
   ],
   scheme: {
-    name: "Rani Durgavati Shri Anna Protsahan Yojana",
-    department: "Farmer Welfare & Agricultural Development Department, Madhya Pradesh",
+    name: "Rani Durgavati Shrianna Protsahan Yojana",
+    department: "Department of Farmer Welfare & Agriculture Development, Madhya Pradesh",
   },
 };

@@ -25,10 +25,10 @@ export default function AboutPage() {
             A federation born of a 500-year-old promise.
           </h1>
           <p className="mt-6 text-xl leading-relaxed text-muted-foreground">
-            Shrianna Federation was incorporated on 9 March 2024 under the
-            Rani&nbsp;Durgavati Shri&nbsp;Anna Protsahan Yojana — a Madhya
-            Pradesh government scheme named for the tribal warrior queen on her
-            500th birth anniversary.
+            Shrianna Federation was incorporated in March 2024 under the
+            Rani&nbsp;Durgavati Shrianna Protsahan Yojana — a Madhya Pradesh
+            government scheme launched during the International Year of Millets
+            (2023–24) and named for the tribal warrior queen Rani Durgavati.
           </p>
         </Container>
       </Section>
@@ -58,11 +58,11 @@ export default function AboutPage() {
             people who grew them were paid the least.
           </p>
           <p>
-            Shrianna was created to change that. We are a consortium of farmer
-            producer organisations across eleven tribal districts, owned and
-            governed by the farmers themselves. We procure their millets directly
-            at fair prices, mill them in Bhopal, and bring them to plates across
-            India under one shared name.
+            Shrianna was created to change that. We are the apex consortium of
+            25+ farmer producer organisations across sixteen districts of Madhya
+            Pradesh, owned and governed by the farmers themselves. We procure
+            their millets directly at fair prices, process them in Bhopal, and
+            bring them to plates across India under the Narmada Millets brand.
           </p>
           <p>
             The scheme funding us is anchored by an interest-free loan of
@@ -79,7 +79,7 @@ export default function AboutPage() {
             <div>
               <Eyebrow className="text-accent">The scheme</Eyebrow>
               <h2 className="mt-4 font-serif text-4xl tracking-tight sm:text-5xl">
-                Rani Durgavati Shri Anna Protsahan Yojana
+                Rani Durgavati Shrianna Protsahan Yojana
               </h2>
               <p className="mt-6 leading-relaxed text-secondary-foreground/80">
                 Approved by the MP Cabinet on 3 January 2024, the scheme
@@ -96,10 +96,10 @@ export default function AboutPage() {
             </div>
             <dl className="grid grid-cols-2 gap-x-6 gap-y-10 self-center">
               {[
-                ["11", "Tribal districts"],
-                ["30,000 MT", "Kharif 2025 target"],
-                ["₹80 cr", "State backing"],
-                ["6", "Director board (5 women)"],
+                ["16", "Districts in MP"],
+                ["40,000 MT", "FY 2026–27 target"],
+                ["28,300 qtl", "Procured in 2025–26"],
+                ["₹7.28 Cr", "Paid via DBT"],
               ].map(([stat, label]) => (
                 <div key={label}>
                   <p className="font-serif text-5xl text-accent">{stat}</p>

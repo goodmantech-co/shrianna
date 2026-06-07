@@ -17,18 +17,18 @@ const milestones = [
   },
   {
     year: "2025",
-    title: "First procurement cycle",
-    body: "Rabi pilot procures 4,200 MT of Kodo & Kutki across Mandla and Dindori. All payments via DBT.",
+    title: "First procurement under the scheme",
+    body: "Procurement begins across Mandla, Dindori and neighbouring districts through FPO networks, with all payments routed via DBT.",
   },
   {
-    year: "2025",
-    title: "Bhopal mill commissioned",
-    body: "Federation-owned processing unit at Beej Bhawan goes live — de-husking, grading and packing under one roof.",
+    year: "2026",
+    title: "2025–26 procurement",
+    body: "~28,300 quintals of Kodo & Kutki procured across 15 districts via the E-Uparjan Portal; ₹7.28 Cr transferred directly to farmers through the JIT/DBT mechanism.",
   },
   {
-    year: "2025",
-    title: "Kharif 2025 procurement",
-    body: "Target of 30,000 MT across eleven tribal districts; first kilo on shop shelves by January 2026.",
+    year: "2026",
+    title: "Narmada Millets brand launched",
+    body: "10 value-added Kodo & Kutki products developed — cookies, rice, poha and ready-to-cook mixes — launched under the federation's Narmada Millets brand.",
   },
 ];
 
@@ -128,12 +128,14 @@ export default function ImpactPage() {
               <div className="px-8 py-14 text-secondary-foreground sm:px-12 lg:px-14">
                 <Eyebrow className="text-accent">Looking ahead</Eyebrow>
                 <h2 className="mt-4 font-serif text-4xl tracking-tight">
-                  Next: 50,000 MT and a second mill in Mandla.
+                  Next: 40,000 MT across about 20 districts.
                 </h2>
                 <p className="mt-5 text-secondary-foreground/80">
-                  By Kharif 2026, the federation aims to procure 50,000 MT
-                  across thirteen districts and open a second processing unit
-                  closer to the heart of millet country.
+                  In FY 2026–27 the federation aims to procure around 40,000 MT
+                  of millets across roughly 20 districts, directly benefiting an
+                  estimated 50,000 farmers — with about 60% processed into rice
+                  and 500 MT of value-added Narmada Millets products, supported
+                  by ICAR-CIAE and ICAR-IIMR.
                 </p>
               </div>
             </div>
