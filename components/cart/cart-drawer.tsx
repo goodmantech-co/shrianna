@@ -3,6 +3,7 @@
 import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { X, Minus, Plus, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCart, useCartTotal } from "./cart-provider";
@@ -11,33 +12,11 @@ import { formatPrice } from "@/lib/utils";
 export function CartDrawer() {
   const { items, isOpen, close, remove, setQty } = useCart();
   const total = useCartTotal();
-  const [checkingOut, setCheckingOut] = React.useState(false);
-  const [error, setError] = React.useState<string | null>(null);
+  const router = useRouter();
 
-  const checkout = async () => {
-    setCheckingOut(true);
-    setError(null);
-    try {
-      const res = await fetch("/api/checkout", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          items: items.map((i) => ({
-            productSlug: i.productSlug,
-            weight: i.weight,
-            quantity: i.quantity,
-          })),
-        }),
-      });
-      const data = await res.json();
-      if (!res.ok || !data.invoiceUrl) {
-        throw new Error(data.error || "Checkout failed. Please try again.");
-      }
-      window.location.href = data.invoiceUrl;
-    } catch (e) {
-      setError((e as Error).message);
-      setCheckingOut(false);
-    }
+  const goToCheckout = () => {
+    close();
+    router.push("/checkout");
   };
 
   React.useEffect(() => {
@@ -159,19 +138,11 @@ export function CartDrawer() {
               <span className="text-sm text-muted-foreground">Subtotal</span>
               <span className="font-serif text-2xl">{formatPrice(total)}</span>
             </div>
-            <Button
-              size="lg"
-              className="w-full"
-              onClick={checkout}
-              disabled={checkingOut}
-            >
-              {checkingOut ? "Taking you to checkout…" : "Checkout"}
+            <Button size="lg" className="w-full" onClick={goToCheckout}>
+              Checkout
             </Button>
-            {error && (
-              <p className="mt-3 text-center text-xs text-destructive">{error}</p>
-            )}
             <p className="mt-3 text-center text-xs text-muted-foreground">
-              Secure checkout powered by Shopify.
+              Secure payments by Razorpay.
             </p>
           </footer>
         )}
