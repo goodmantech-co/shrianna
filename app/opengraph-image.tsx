@@ -8,163 +8,224 @@ export const alt =
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
+const read = (...p: string[]) => fs.readFileSync(path.join(process.cwd(), ...p));
+const b64 = (buf: Buffer, mime: string) => `data:${mime};base64,${buf.toString("base64")}`;
+
 export default async function OGImage() {
-  const logoBuffer = fs.readFileSync(
-    path.join(process.cwd(), "public", "shriannalogo.jpeg")
-  );
-  const logoDataUri = `data:image/jpeg;base64,${logoBuffer.toString("base64")}`;
+  const logo = b64(read("public", "shriannalogo.jpeg"), "image/jpeg");
+  const field = b64(read("public", "editorial", "kodo-kutki-field.jpg"), "image/jpeg");
+
+  const playfair = read("fonts", "playfair-700.woff");
+  const playfairItalic = read("fonts", "playfair-700-italic.woff");
+  const inter = read("fonts", "inter-400.woff");
+  const interSemi = read("fonts", "inter-600.woff");
+
+  const GOLD = "#E7C56B";
 
   return new ImageResponse(
     (
       <div
         style={{
+          position: "relative",
           display: "flex",
           width: "100%",
           height: "100%",
-          backgroundColor: "#FAF6EE",
-          fontFamily: "Georgia, serif",
-          position: "relative",
+          fontFamily: "Inter",
         }}
       >
-        {/* Left band */}
+        {/* Full-bleed photography */}
+        <img
+          src={field}
+          width={1200}
+          height={630}
+          style={{ position: "absolute", top: 0, left: 0, objectFit: "cover" }}
+        />
+        {/* Deep-green editorial scrim */}
         <div
           style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundImage:
+              "linear-gradient(100deg, rgba(16,34,24,0.96) 0%, rgba(16,34,24,0.86) 40%, rgba(16,34,24,0.40) 100%)",
+          }}
+        />
+
+        {/* Content */}
+        <div
+          style={{
+            position: "relative",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
-            padding: "70px 64px",
-            flex: 1,
+            width: "100%",
+            height: "100%",
+            padding: "60px 64px",
           }}
         >
+          {/* Header — logo lockup + brand pill */}
           <div
             style={{
               display: "flex",
-              fontSize: 18,
-              letterSpacing: 6,
-              textTransform: "uppercase",
-              color: "#1FA3CC",
-              fontFamily: "system-ui",
+              alignItems: "center",
+              justifyContent: "space-between",
             }}
           >
-            Rani Durgavati Shrianna Protsahan Yojana
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <div
+                style={{
+                  display: "flex",
+                  width: 60,
+                  height: 60,
+                  borderRadius: "50%",
+                  overflow: "hidden",
+                  backgroundColor: "#fff",
+                }}
+              >
+                <img src={logo} width={60} height={60} style={{ objectFit: "cover" }} />
+              </div>
+              <div
+                style={{
+                  marginLeft: 16,
+                  fontFamily: "Inter",
+                  fontWeight: 600,
+                  fontSize: 19,
+                  letterSpacing: 5,
+                  color: "rgba(255,255,255,0.95)",
+                }}
+              >
+                SHRIANNA FEDERATION
+              </div>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                border: "1px solid rgba(231,197,107,0.55)",
+                borderRadius: 999,
+                padding: "9px 18px",
+                fontFamily: "Inter",
+                fontWeight: 600,
+                fontSize: 14,
+                letterSpacing: 3,
+                color: GOLD,
+              }}
+            >
+              NARMADA MILLETS
+            </div>
           </div>
 
+          {/* Headline block */}
           <div style={{ display: "flex", flexDirection: "column" }}>
+            <div style={{ display: "flex", width: 56, height: 3, backgroundColor: GOLD, marginBottom: 24 }} />
             <div
               style={{
-                fontSize: 78,
-                lineHeight: 1.02,
-                color: "#1a1a1a",
-                letterSpacing: -2,
+                display: "flex",
+                fontFamily: "Inter",
+                fontWeight: 600,
+                fontSize: 17,
+                letterSpacing: 5,
+                color: GOLD,
+                marginBottom: 18,
               }}
             >
-              Ancient millets.
+              MILLETS FROM MADHYA PRADESH
+            </div>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <div
+                style={{
+                  display: "flex",
+                  fontFamily: "Playfair",
+                  fontWeight: 700,
+                  fontSize: 84,
+                  lineHeight: 1.0,
+                  letterSpacing: -1,
+                  color: "#ffffff",
+                }}
+              >
+                Ancient millets.
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  fontFamily: "PlayfairItalic",
+                  fontWeight: 700,
+                  fontStyle: "italic",
+                  fontSize: 84,
+                  lineHeight: 1.08,
+                  letterSpacing: -1,
+                  color: GOLD,
+                }}
+              >
+                Grown by women.
+              </div>
             </div>
             <div
               style={{
-                fontSize: 78,
-                lineHeight: 1.02,
-                color: "#1FA3CC",
-                fontStyle: "italic",
-                letterSpacing: -2,
-              }}
-            >
-              Grown by women.
-            </div>
-            <div
-              style={{
-                fontSize: 78,
-                lineHeight: 1.02,
-                color: "#1a1a1a",
-                letterSpacing: -2,
-              }}
-            >
-              From the heart of MP.
-            </div>
-            <div
-              style={{
-                marginTop: 26,
-                fontSize: 22,
-                color: "#5B5346",
-                fontFamily: "system-ui",
-                maxWidth: 600,
+                display: "flex",
+                marginTop: 24,
+                fontFamily: "Inter",
+                fontWeight: 400,
+                fontSize: 23,
                 lineHeight: 1.4,
+                color: "rgba(255,255,255,0.82)",
+                maxWidth: 740,
               }}
             >
               A farmer-owned federation reviving Kodo, Kutki and other millets
-              across Madhya Pradesh — sold as Narmada Millets.
+              across sixteen districts of Madhya Pradesh.
             </div>
-          </div>
 
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              fontSize: 18,
-              color: "#5B5346",
-              fontFamily: "system-ui",
-              letterSpacing: 2,
-              textTransform: "uppercase",
-            }}
-          >
-            shriannafederation.in
-          </div>
-        </div>
-
-        {/* Right logo column */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            width: 460,
-            backgroundColor: "#2D5F3F",
-            padding: 48,
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              width: 340,
-              height: 340,
-              borderRadius: "50%",
-              overflow: "hidden",
-              backgroundColor: "#fff",
-            }}
-          >
-            <img
-              src={logoDataUri}
-              width={340}
-              height={340}
-              style={{ objectFit: "cover" }}
-            />
-          </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              marginTop: 32,
-              color: "#FAF6EE",
-            }}
-          >
-            <div style={{ fontSize: 42, letterSpacing: -1 }}>Shrianna</div>
+            {/* Footer line */}
             <div
               style={{
-                fontSize: 14,
-                letterSpacing: 4,
-                marginTop: 4,
-                fontFamily: "system-ui",
-                color: "#D9B832",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                marginTop: 34,
+                paddingTop: 22,
+                borderTop: "1px solid rgba(255,255,255,0.15)",
               }}
             >
-              FEDERATION
+              <div
+                style={{
+                  display: "flex",
+                  fontFamily: "Inter",
+                  fontWeight: 600,
+                  fontSize: 19,
+                  letterSpacing: 1,
+                  color: "#ffffff",
+                }}
+              >
+                shriannafederation.in
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  fontFamily: "Inter",
+                  fontWeight: 400,
+                  fontSize: 15,
+                  letterSpacing: 1,
+                  color: "rgba(255,255,255,0.6)",
+                }}
+              >
+                Direct from tribal farmers · Paid via DBT
+              </div>
             </div>
           </div>
         </div>
       </div>
     ),
-    size
+    {
+      ...size,
+      fonts: [
+        { name: "Playfair", data: playfair, weight: 700, style: "normal" },
+        { name: "PlayfairItalic", data: playfairItalic, weight: 700, style: "italic" },
+        { name: "Inter", data: inter, weight: 400, style: "normal" },
+        { name: "Inter", data: interSemi, weight: 600, style: "normal" },
+      ],
+    }
   );
 }
