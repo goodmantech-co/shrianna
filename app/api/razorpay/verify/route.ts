@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { computeOrder, itemsSummary, type CartLineInput, type Customer } from "@/lib/order";
 import { verifyPaymentSignature } from "@/lib/razorpay";
 import { appendOrderRow } from "@/lib/sheets";
+import { emailConfigured, orderConfirmationEmail, sendEmail } from "@/lib/email";
 
 interface VerifyBody {
   razorpay_order_id?: string;
@@ -56,6 +57,21 @@ export async function POST(req: Request) {
     // The payment succeeded — never fail the customer because logging hiccuped.
     // The Razorpay webhook is the backstop that will still record this order.
     console.error("[razorpay/verify] sheet append failed:", e);
+  }
+
+  // Send the order-confirmation email (best-effort — never fail the request on it).
+  if (c.email && emailConfigured()) {
+    try {
+      const { subject, html } = orderConfirmationEmail({
+        customer: c,
+        lines: order.lines,
+        total: order.amount,
+        orderId: razorpay_order_id,
+      });
+      await sendEmail({ to: c.email, subject, html, replyTo: "orders@shriannafederation.in" });
+    } catch (e) {
+      console.error("[razorpay/verify] confirmation email failed:", e);
+    }
   }
 
   return NextResponse.json({ ok: true });
