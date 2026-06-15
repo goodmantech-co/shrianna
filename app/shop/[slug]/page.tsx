@@ -22,7 +22,9 @@ export default async function ProductPage({
   const product = getProduct(slug);
   if (!product) notFound();
 
-  const related = products.filter((p) => p.slug !== product.slug).slice(0, 3);
+  const related = products
+    .filter((p) => p.slug !== product.slug && !p.hidden)
+    .slice(0, 3);
 
   return (
     <>

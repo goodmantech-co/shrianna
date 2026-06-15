@@ -33,6 +33,8 @@ export interface Product {
   inStock: boolean;
   featured?: boolean;
   badges?: ProductBadge[];
+  /** Hidden products never appear in listings/search but are reachable by direct URL. */
+  hidden?: boolean;
   releasedAt: string;
 }
 
@@ -569,6 +571,33 @@ export const products: Product[] = [
     badges: ["limited"],
     releasedAt: "2026-03-01",
   },
+
+  // ----- Internal -----------------------------------------------------------
+  // ₹1 test product. `hidden: true` keeps it off the storefront, search and
+  // home rails — reach it directly at /shop/test-rupee to test live checkout.
+  {
+    slug: "test-rupee",
+    name: "Test Product (₹1)",
+    millet: "Test",
+    category: "snack",
+    tagline: "Internal payment test — not a real product.",
+    description:
+      "A ₹1 item used only to test the live Razorpay checkout and order logging end to end. It is hidden from the shop and should not be ordered by customers.",
+    hero: "/products/kodo-rice.jpeg",
+    gallery: ["/products/kodo-rice.jpeg"],
+    packSizes: [{ weight: "1 unit", price: 1 }],
+    origin: "Internal",
+    district: "Internal",
+    benefits: ["Used to verify the payment flow"],
+    nutrition: [],
+    recipes: [],
+    dietary: [],
+    rating: 5,
+    reviews: 0,
+    inStock: true,
+    hidden: true,
+    releasedAt: "2026-06-15",
+  },
 ];
 
 export function getProduct(slug: string) {
@@ -576,15 +605,19 @@ export function getProduct(slug: string) {
 }
 
 export function getFeatured() {
-  return products.filter((p) => p.featured);
+  return products.filter((p) => p.featured && !p.hidden);
 }
 
 export function getBestsellers(limit = 6) {
-  return [...products].sort((a, b) => b.reviews - a.reviews).slice(0, limit);
+  return [...products]
+    .filter((p) => !p.hidden)
+    .sort((a, b) => b.reviews - a.reviews)
+    .slice(0, limit);
 }
 
 export function getNewArrivals(limit = 4) {
   return [...products]
+    .filter((p) => !p.hidden)
     .sort(
       (a, b) =>
         new Date(b.releasedAt).getTime() - new Date(a.releasedAt).getTime()
@@ -638,7 +671,7 @@ export function packSizeOptions(): string[] {
 }
 
 export function countByCategory(cat: ProductCategory) {
-  return products.filter((p) => p.category === cat).length;
+  return products.filter((p) => p.category === cat && !p.hidden).length;
 }
 
 export interface ShopFilters {
@@ -678,6 +711,7 @@ export function activeFilterCount(f: ShopFilters): number {
 
 export function filterProducts(items: Product[], f: ShopFilters): Product[] {
   return items.filter((p) => {
+    if (p.hidden) return false;
     if (f.categories.length && !f.categories.includes(p.category)) return false;
     if (
       f.millets.length &&
