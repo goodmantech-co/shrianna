@@ -2,7 +2,12 @@ import Image from "next/image";
 import { Container, Section, Eyebrow } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
 
-export const metadata = { title: "Recipes" };
+export const metadata = {
+  title: "Millet Recipes",
+  description:
+    "Simple, family-tested millet recipes from Shrianna Federation members — Kodo pulao, Kutki kheer, ragi mudde and everyday mixed-millet roti, most ready in under 30 minutes.",
+  alternates: { canonical: "/recipes" },
+};
 
 const recipes = [
   {
@@ -10,7 +15,7 @@ const recipes = [
     millet: "Kodo",
     time: "30 min",
     image:
-      "https://gumlet.assettype.com/freepressjournal/2023-06/5e16b281-d4a7-4145-babb-0f87d1567c18/Gond_Thali_16x9.png",
+      "/editorial/gond-thali.jpg",
     body: "Soak 1 cup whole Kodo for 20 min. Saute onion, ginger, garlic in ghee; add chopped carrot, peas, beans. Drain and add the Kodo, double its volume in water, salt, a bay leaf. Cover and simmer for 18 minutes.",
   },
   {
@@ -18,7 +23,7 @@ const recipes = [
     millet: "Kutki",
     time: "40 min",
     image:
-      "https://www.agniban.com/wp-content/uploads/2023/07/pm-01.jpg",
+      "/editorial/recipe-khichdi.jpg",
     body: "Roast 1/2 cup Kutki on low flame for 3 min. Add 4 cups whole milk and simmer until the grain is tender (~25 min). Stir in 1/2 cup melted jaggery, crushed cardamom, a pinch of saffron. Serve warm or chilled.",
   },
   {
@@ -26,7 +31,7 @@ const recipes = [
     millet: "Ragi",
     time: "20 min",
     image:
-      "https://images.bhaskarassets.com/web2images/521/2023/05/19/22227328-f040-4f14-9622-0964492cd685_1684471602600.jpg",
+      "/editorial/recipe-dosa.jpg",
     body: "Bring 2 cups water to a hard boil with a pinch of salt. Slowly rain in 1 cup ragi flour while stirring. Cover and cook on low for 4 min. Mash with a wooden ladle until smooth. Shape into orbs and serve with hot sambar.",
   },
   {
@@ -34,7 +39,7 @@ const recipes = [
     millet: "Mixed",
     time: "15 min",
     image:
-      "https://images.bhaskarassets.com/thumb/730x0/web2images/521/2023/02/16/206167646339763eccd25ef844whatsappimage2023-02-15a_1676496276.jpg",
+      "/editorial/recipe-poha.jpg",
     body: "Combine 2 cups Federation mixed millet atta with 1 tsp salt. Add warm water bit by bit, knead a soft dough, rest 10 min. Roll thin, cook on a hot tava with a little ghee. Best with jaggery and white butter.",
   },
 ];

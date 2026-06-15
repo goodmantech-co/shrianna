@@ -5,6 +5,7 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { PromoStrip } from "@/components/layout/promo-strip";
 import { CartProvider } from "@/components/cart/cart-provider";
+import { site } from "@/lib/site";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -19,10 +20,12 @@ const fraunces = Fraunces({
   axes: ["opsz"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://shriannafederation.in";
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.shriannafederation.in";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  alternates: { canonical: "/" },
   title: {
     default: "Shrianna Federation — Millets from the heart of Madhya Pradesh",
     template: "%s · Shrianna Federation",
@@ -83,6 +86,29 @@ export default function RootLayout({
       className={`${inter.variable} ${fraunces.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: site.name,
+              legalName: site.legalName,
+              url: siteUrl,
+              logo: `${siteUrl}/shriannalogo.jpeg`,
+              email: site.email,
+              telephone: site.phone,
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: `${site.address.line1}, ${site.address.line2}`,
+                addressLocality: site.address.city,
+                addressRegion: site.address.state,
+                postalCode: site.address.pin,
+                addressCountry: "IN",
+              },
+            }),
+          }}
+        />
         <CartProvider>
           <PromoStrip />
           <SiteHeader />

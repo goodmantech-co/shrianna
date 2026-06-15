@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,8 +10,31 @@ import { ProductCard } from "@/components/product/product-card";
 import { products, getProduct } from "@/lib/products";
 import { AddToCart } from "./add-to-cart";
 
+const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.shriannafederation.in";
+
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const product = getProduct(slug);
+  if (!product) return {};
+  return {
+    title: product.name,
+    description: product.tagline,
+    alternates: { canonical: `/shop/${slug}` },
+    ...(product.hidden ? { robots: { index: false, follow: false } } : {}),
+    openGraph: {
+      title: product.name,
+      description: product.tagline,
+      images: [{ url: product.hero }],
+    },
+  };
 }
 
 export default async function ProductPage({
@@ -26,8 +50,60 @@ export default async function ProductPage({
     .filter((p) => p.slug !== product.slug && !p.hidden)
     .slice(0, 3);
 
+  const prices = product.packSizes.map((s) => s.price);
+  const productLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: product.description,
+    image: `${base}${product.hero}`,
+    category: product.category,
+    brand: { "@type": "Brand", name: "Narmada Millets" },
+    ...(product.reviews > 0
+      ? {
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: product.rating,
+            reviewCount: product.reviews,
+          },
+        }
+      : {}),
+    offers: {
+      "@type": "AggregateOffer",
+      priceCurrency: "INR",
+      lowPrice: Math.min(...prices),
+      highPrice: Math.max(...prices),
+      offerCount: product.packSizes.length,
+      availability: product.inStock
+        ? "https://schema.org/InStock"
+        : "https://schema.org/OutOfStock",
+      url: `${base}/shop/${product.slug}`,
+    },
+  };
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: base },
+      { "@type": "ListItem", position: 2, name: "Shop", item: `${base}/shop` },
+      { "@type": "ListItem", position: 3, name: product.name, item: `${base}/shop/${product.slug}` },
+    ],
+  };
+
   return (
     <>
+      {!product.hidden && (
+        <>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(productLd) }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+          />
+        </>
+      )}
       <Section className="pb-0 pt-8 sm:pt-12">
         <Container size="wide">
           <Link
@@ -58,7 +134,7 @@ export default async function ProductPage({
                     >
                       <Image
                         src={src}
-                        alt=""
+                        alt={`${product.name} — view ${i + 2}`}
                         fill
                         sizes="120px"
                         className="object-cover"
@@ -126,7 +202,7 @@ export default async function ProductPage({
                   <h2 className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-foreground/70">
                     Nutrition · per 100g
                   </h2>
-                  <dl className="grid grid-cols-3 gap-y-4 gap-x-6">
+                  <dl className="grid grid-cols-2 gap-y-4 gap-x-6 sm:grid-cols-3">
                     {product.nutrition.map((n) => (
                       <div key={n.label}>
                         <dt className="text-xs text-muted-foreground">{n.label}</dt>

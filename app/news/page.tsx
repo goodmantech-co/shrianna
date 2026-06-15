@@ -2,17 +2,22 @@ import Image from "next/image";
 import { Container, Section, Eyebrow } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
 
-export const metadata = { title: "News & press" };
+export const metadata = {
+  title: "News & press",
+  description:
+    "Latest news from Shrianna Federation — procurement milestones, the Rani Durgavati Shrianna Protsahan Yojana, the Bhopal women-led mill and Narmada Millets in retail.",
+  alternates: { canonical: "/news" },
+};
 
 const items = [
   {
     date: "14 October 2025",
     type: "Cabinet decision",
     title:
-      "Shrianna Federation procures ~28,300 quintals of Kodo–Kutki in its 2025–26 season across 15 districts",
-    body: "The Cabinet approved the operational framework of the Shrianna Federation, including an ₹80 crore interest-free loan from the State Price Stabilization Fund and DBT-based farmer incentives.",
+      "Cabinet clears the Shrianna Federation framework — ₹80 crore interest-free loan and DBT farmer incentives approved",
+    body: "The State Cabinet approved the operational framework of the Shrianna Federation, including an ₹80 crore interest-free loan from the State Price Stabilization Fund and DBT-based incentives paid directly to registered millet farmers.",
     image:
-      "https://desitalkchicago.com/wp-content/uploads/2025/10/ANI-20251014124559.jpg",
+      "/editorial/cabinet-decision.jpg",
   },
   {
     date: "5 October 2025",
@@ -21,16 +26,16 @@ const items = [
       "Rani Durgavati Shrianna Protsahan Yojana: farmers to receive a ₹1,000 per quintal incentive via DBT",
     body: "Field-level instructions issued by the Farmer Welfare Department detail registration windows, procurement centres and a transparent grievance redressal mechanism.",
     image:
-      "https://feminisminindia.com/wp-content/uploads/2022/09/Kodo-Kutki-field-2048x1152.jpg",
+      "/editorial/kodo-kutki-field.jpg",
   },
   {
     date: "12 February 2025",
     type: "Operations",
     title:
-      "Bhopal mill inaugurated at Beej Bhawan — first 500 quintals of Kodo packed",
+      "Bhopal mill inaugurated at Beej Bhawan — first batch of 500 quintals of Kodo packed",
     body: "The federation's processing unit becomes the only women-led millet mill in the state, with capacity for 8 MT/day of cleaning and de-husking.",
     image:
-      "https://images.bhaskarassets.com/web2images/521/2024/02/12/e3466c22-fd49-49f1-94d0-09da9d644155_1707740807770.jpg",
+      "/editorial/procurement.jpg",
   },
   {
     date: "31 July 2024",
@@ -38,7 +43,7 @@ const items = [
     title: "Narmada Millets packets hit mainstream Bhopal retailers for the first time",
     body: "Federation-branded Kodo and Kutki products appear on shelves at select grocers in Bhopal and Indore — the first commercial outing for the Narmada Millets brand.",
     image:
-      "https://images.bhaskarassets.com/thumb/730x0/web2images/521/2023/07/31/app_169072399764c6669da7049_img-20230730-wa0037.jpg",
+      "/editorial/mill-launch.jpg",
   },
 ];
 

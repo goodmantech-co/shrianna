@@ -131,9 +131,9 @@ export const products: Product[] = [
     tagline: "Unpolished Sawa — the fasting-day favourite.",
     description:
       "Barnyard millet, called Sawa or Sanwa, is the lightest of the millets and a traditional vrat (fasting) grain. Left unpolished to keep its fibre and minerals intact. Cooks quickly into a fluffy, rice-like grain.",
-    hero: "https://thumbs.dreamstime.com/b/millet-ancient-african-grain-wooden-bowl-white-background-overhead-flat-lay-shot-healthy-vegan-side-dish-402820873.jpg",
+    hero: "/products/barnyard-rice.jpg",
     gallery: [
-      "https://thumbs.dreamstime.com/b/millet-ancient-african-grain-wooden-bowl-white-background-overhead-flat-lay-shot-healthy-vegan-side-dish-402820873.jpg",
+      "/products/barnyard-rice.jpg",
     ],
     packSizes: [
       { weight: "500g", price: 80, mrp: 100 },
@@ -169,9 +169,9 @@ export const products: Product[] = [
     tagline: "Flattened Kodo flakes for a 10-minute breakfast.",
     description:
       "Kodo millet, par-boiled and flattened into light poha flakes. A faster, higher-fibre take on the classic Indori breakfast — just soak, temper and serve. No rice, all millet.",
-    hero: "https://c8.alamy.com/comp/MJK4M4/millet-flakes-in-wooden-bowl-light-yellow-rolled-millet-used-for-porridge-muesli-and-baking-wheat-and-gluten-free-grain-isolated-macro-photo-MJK4M4.jpg",
+    hero: "/products/millet-poha.jpg",
     gallery: [
-      "https://c8.alamy.com/comp/MJK4M4/millet-flakes-in-wooden-bowl-light-yellow-rolled-millet-used-for-porridge-muesli-and-baking-wheat-and-gluten-free-grain-isolated-macro-photo-MJK4M4.jpg",
+      "/products/millet-poha.jpg",
     ],
     packSizes: [
       { weight: "250g", price: 90, mrp: 110 },
@@ -207,9 +207,9 @@ export const products: Product[] = [
     tagline: "Little-millet flakes — soft, quick, iron-rich.",
     description:
       "Little millet (Kutki) par-boiled and rolled into delicate poha flakes. Softer than Kodo poha and naturally rich in iron — a wholesome breakfast or evening chivda base.",
-    hero: "https://c8.alamy.com/comp/MJK4M4/millet-flakes-in-wooden-bowl-light-yellow-rolled-millet-used-for-porridge-muesli-and-baking-wheat-and-gluten-free-grain-isolated-macro-photo-MJK4M4.jpg",
+    hero: "/products/millet-poha.jpg",
     gallery: [
-      "https://c8.alamy.com/comp/MJK4M4/millet-flakes-in-wooden-bowl-light-yellow-rolled-millet-used-for-porridge-muesli-and-baking-wheat-and-gluten-free-grain-isolated-macro-photo-MJK4M4.jpg",
+      "/products/millet-poha.jpg",
     ],
     packSizes: [
       { weight: "250g", price: 100, mrp: 125 },
@@ -392,9 +392,9 @@ export const products: Product[] = [
     tagline: "Aromatic dum biryani — made with millets, not rice.",
     description:
       "A festive multi-millet biryani mix with whole spices and biryani masala. Layered and cooked on dum, it delivers all the aroma of a classic biryani with the fibre and low-GI benefits of millet. Our most premium ready meal.",
-    hero: "https://thumbs.dreamstime.com/b/organic-yellow-millet-grain-wooden-bowl-white-table-healthy-food-ingredient-top-view-349224511.jpg",
+    hero: "/products/biryani-mix.jpg",
     gallery: [
-      "https://thumbs.dreamstime.com/b/organic-yellow-millet-grain-wooden-bowl-white-table-healthy-food-ingredient-top-view-349224511.jpg",
+      "/products/biryani-mix.jpg",
     ],
     packSizes: [
       { weight: "200g", price: 260, mrp: 320 },
@@ -547,10 +547,10 @@ export const products: Product[] = [
     tagline: "The whole Narmada Millets range, in one handwoven basket.",
     description:
       "Our flagship hamper for festivals and corporate gifting. Includes Kodo rice, Little-millet rice, a khichdi mix and a box of multi-millet cookies — packed in a handwoven sabai-grass basket made by artisans in eastern MP. Each hamper carries a card naming the farmer collective behind your grains.",
-    hero: "https://mir-s3-cdn-cf.behance.net/project_modules/fs/b984af212237383.6731edf4820f3.jpg",
+    hero: "/products/harvest-hamper.jpg",
     gallery: [
-      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/b984af212237383.6731edf4820f3.jpg",
-      "https://gumlet.assettype.com/freepressjournal/2023-06/5e16b281-d4a7-4145-babb-0f87d1567c18/Gond_Thali_16x9.png",
+      "/products/harvest-hamper.jpg",
+      "/editorial/gond-thali.jpg",
     ],
     packSizes: [{ weight: "Hamper", price: 1499, mrp: 1850 }],
     origin: "Federation curated",

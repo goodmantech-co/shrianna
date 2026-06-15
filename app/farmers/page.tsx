@@ -2,7 +2,12 @@ import Image from "next/image";
 import { Container, Section, Eyebrow } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
 
-export const metadata = { title: "The farmers" };
+export const metadata = {
+  title: "The Farmers",
+  description:
+    "Shrianna Federation pools the harvests of farmer producer organisations across sixteen districts of Madhya Pradesh — over 5,000 mostly-women millet farmers paid fairly via DBT.",
+  alternates: { canonical: "/farmers" },
+};
 
 const districts = [
   { name: "Mandla", crop: "Kodo · Kutki", members: 820 },
@@ -25,7 +30,7 @@ const stories = [
     quote:
       "Earlier we sold Kutki at the village mandi for whatever the trader offered. Through the federation, the same harvest now earns us double — and the payment lands in our bank within ten days.",
     image:
-      "https://feminisminindia.com/wp-content/uploads/2022/09/women-farmer-in-field.jpg",
+      "/editorial/women-farmer-field.jpg",
   },
   {
     name: "Asha Uikey",
@@ -33,7 +38,7 @@ const stories = [
     quote:
       "When the cabinet announced the scheme, no one knew how it would actually reach women like us. The federation is what made it real.",
     image:
-      "https://usingdiversity.keystone-foundation.org/wp-content/uploads/2020/09/IMG-20200324-WA0012-1024x768.jpg",
+      "/editorial/baiga-women-training.jpg",
   },
 ];
 
@@ -44,7 +49,7 @@ export default function FarmersPage() {
         <Container size="narrow">
           <Eyebrow>The farmers</Eyebrow>
           <h1 className="mt-4 font-serif text-5xl leading-[1.05] tracking-tight sm:text-6xl">
-            70,000 farmers. Sixteen districts. One federation.
+            5,000+ farmers. Sixteen districts. One federation.
           </h1>
           <p className="mt-6 text-xl leading-relaxed text-muted-foreground">
             Shrianna pools the harvests of farmer producer organisations
@@ -57,7 +62,12 @@ export default function FarmersPage() {
 
       <Section>
         <Container size="wide">
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <Eyebrow>Where our members farm</Eyebrow>
+          <p className="mt-3 max-w-2xl text-muted-foreground">
+            A snapshot of member collectives across the federation&rsquo;s
+            sixteen districts of Madhya Pradesh.
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {districts.map((d) => (
               <div
                 key={d.name}
@@ -118,7 +128,7 @@ export default function FarmersPage() {
           <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-center">
             <div className="relative aspect-square overflow-hidden rounded-2xl">
               <Image
-                src="https://feminisminindia.com/wp-content/uploads/2022/09/Processing-plant-of-federation.jpg"
+                src="/editorial/processing-plant.jpg"
                 alt="Federation processing plant"
                 fill
                 sizes="(min-width: 1024px) 40vw, 100vw"

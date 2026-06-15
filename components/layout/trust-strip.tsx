@@ -5,7 +5,7 @@ const items = [
   {
     icon: Sprout,
     title: "Direct from tribal farmers",
-    body: "70,000 farmers across 16 MP districts",
+    body: "5,000+ farmers across 16 MP districts",
   },
   {
     icon: ShieldCheck,

@@ -40,7 +40,7 @@ const tiles: {
     label: "Gift packs",
     icon: Gift,
     image:
-      "https://mir-s3-cdn-cf.behance.net/project_modules/fs/b984af212237383.6731edf4820f3.jpg",
+      "/products/harvest-hamper.jpg",
   },
 ];
 

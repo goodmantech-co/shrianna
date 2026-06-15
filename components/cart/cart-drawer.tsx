@@ -103,7 +103,7 @@ export function CartDrawer() {
                           onClick={() =>
                             setQty(item.productSlug, item.weight, item.quantity - 1)
                           }
-                          className="flex h-8 w-8 items-center justify-center"
+                          className="flex h-9 w-9 items-center justify-center"
                           aria-label="Decrease"
                         >
                           <Minus className="h-3 w-3" />
@@ -115,7 +115,7 @@ export function CartDrawer() {
                           onClick={() =>
                             setQty(item.productSlug, item.weight, item.quantity + 1)
                           }
-                          className="flex h-8 w-8 items-center justify-center"
+                          className="flex h-9 w-9 items-center justify-center"
                           aria-label="Increase"
                         >
                           <Plus className="h-3 w-3" />

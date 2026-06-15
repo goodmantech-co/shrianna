@@ -1,9 +1,14 @@
 import { Mail, MapPin, Phone, Globe } from "lucide-react";
 import { Container, Section, Eyebrow } from "@/components/ui/container";
-import { Button } from "@/components/ui/button";
 import { site } from "@/lib/site";
+import { ContactForm } from "@/components/forms/contact-form";
 
-export const metadata = { title: "Contact" };
+export const metadata = {
+  title: "Contact",
+  description:
+    "Get in touch with Shrianna Federation in Bhopal — for orders, procurement, FPO membership or bulk enquiries about Narmada Millets.",
+  alternates: { canonical: "/contact" },
+};
 
 export default function ContactPage() {
   return (
@@ -57,27 +62,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <form className="space-y-5 rounded-2xl border border-border bg-card p-8">
-            <h2 className="font-serif text-2xl">Send us a message</h2>
-            <Field label="Your name" required />
-            <Field label="Email" type="email" required />
-            <Field label="Organisation (optional)" />
-            <div>
-              <span className="mb-1.5 block text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
-                Message
-              </span>
-              <textarea
-                rows={5}
-                className="w-full resize-none rounded-lg border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-primary focus:ring-2 focus:ring-primary/20"
-              />
-            </div>
-            <Button size="lg" className="w-full" type="button">
-              Send message
-            </Button>
-            <p className="text-center text-xs text-muted-foreground">
-              Showcase site — the form does not actually send.
-            </p>
-          </form>
+          <ContactForm />
         </div>
       </Container>
     </Section>
@@ -105,22 +90,5 @@ function ContactCard({
         <p className="mt-1.5 leading-relaxed">{children}</p>
       </div>
     </div>
-  );
-}
-
-function Field({
-  label,
-  ...rest
-}: React.InputHTMLAttributes<HTMLInputElement> & { label: string }) {
-  return (
-    <label className="block text-sm">
-      <span className="mb-1.5 block text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
-        {label}
-      </span>
-      <input
-        {...rest}
-        className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-primary focus:ring-2 focus:ring-primary/20"
-      />
-    </label>
   );
 }

@@ -25,9 +25,33 @@ interface CartState {
 
 const CartContext = React.createContext<CartState | null>(null);
 
+const STORAGE_KEY = "narmada-cart";
+
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = React.useState<CartItem[]>([]);
   const [isOpen, setIsOpen] = React.useState(false);
+  const [hydrated, setHydrated] = React.useState(false);
+
+  // Load the saved cart once on mount (client only).
+  React.useEffect(() => {
+    try {
+      const saved = window.localStorage.getItem(STORAGE_KEY);
+      if (saved) setItems(JSON.parse(saved) as CartItem[]);
+    } catch {
+      /* ignore corrupt/unavailable storage */
+    }
+    setHydrated(true);
+  }, []);
+
+  // Persist on every change (after the initial load, so we don't clobber it).
+  React.useEffect(() => {
+    if (!hydrated) return;
+    try {
+      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+    } catch {
+      /* ignore */
+    }
+  }, [items, hydrated]);
 
   const add: CartState["add"] = (incoming) => {
     setItems((prev) => {

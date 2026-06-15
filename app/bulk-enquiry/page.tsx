@@ -1,7 +1,12 @@
 import { Container, Section, Eyebrow } from "@/components/ui/container";
-import { Button } from "@/components/ui/button";
+import { BulkEnquiryForm } from "@/components/forms/bulk-enquiry-form";
 
-export const metadata = { title: "Bulk enquiry" };
+export const metadata = {
+  title: "Bulk enquiry",
+  description:
+    "Procure Narmada Millets at scale for schools, hospitals, retail, hospitality and corporate gifting. MOQ from 100kg with volume-tiered pricing.",
+  alternates: { canonical: "/bulk-enquiry" },
+};
 
 export default function BulkEnquiryPage() {
   return (
@@ -18,60 +23,8 @@ export default function BulkEnquiryPage() {
           come back within two working days.
         </p>
 
-        <form className="mt-12 space-y-5 rounded-2xl border border-border bg-card p-8">
-          <Field label="Organisation name" required />
-          <Field label="Your name" required />
-          <div className="grid gap-5 sm:grid-cols-2">
-            <Field label="Email" type="email" required />
-            <Field label="Phone" type="tel" required />
-          </div>
-          <label className="block text-sm">
-            <span className="mb-1.5 block text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
-              Type of buyer
-            </span>
-            <select className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20">
-              <option>Retail / Modern trade</option>
-              <option>Schools / Mid-day meal programme</option>
-              <option>Hospitality / Hotel chain</option>
-              <option>Corporate gifting</option>
-              <option>NGO / Government programme</option>
-              <option>Other</option>
-            </select>
-          </label>
-          <div>
-            <span className="mb-1.5 block text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
-              Requirement (volumes, SKUs, timeline)
-            </span>
-            <textarea
-              rows={5}
-              className="w-full resize-none rounded-lg border border-border bg-background px-4 py-3 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
-            />
-          </div>
-          <Button size="lg" className="w-full" type="button">
-            Send enquiry
-          </Button>
-          <p className="text-center text-xs text-muted-foreground">
-            Showcase site — the form does not actually send.
-          </p>
-        </form>
+        <BulkEnquiryForm />
       </Container>
     </Section>
-  );
-}
-
-function Field({
-  label,
-  ...rest
-}: React.InputHTMLAttributes<HTMLInputElement> & { label: string }) {
-  return (
-    <label className="block text-sm">
-      <span className="mb-1.5 block text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
-        {label}
-      </span>
-      <input
-        {...rest}
-        className="w-full rounded-lg border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-primary focus:ring-2 focus:ring-primary/20"
-      />
-    </label>
   );
 }

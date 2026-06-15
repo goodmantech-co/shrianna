@@ -88,7 +88,7 @@ export function SiteFooter() {
         <div className="mt-14 flex flex-col items-start justify-between gap-3 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row sm:items-center">
           <p>© {new Date().getFullYear()} {site.legalName}. All rights reserved.</p>
           <p className="opacity-70">
-            Showcase site · Not a live commerce store
+            Narmada Millets — a Shrianna Federation brand
           </p>
         </div>
       </Container>

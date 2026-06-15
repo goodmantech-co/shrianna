@@ -82,7 +82,7 @@ export default function HomePage() {
             <div className="relative">
               <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-muted shadow-xl">
                 <Image
-                  src="https://feminisminindia.com/wp-content/uploads/2022/09/women-farmer-in-field.jpg"
+                  src="/editorial/women-farmer-field.jpg"
                   alt="Women farmer in a Kodo-Kutki field"
                   fill
                   priority
@@ -216,7 +216,7 @@ export default function HomePage() {
             <div className="grid grid-cols-2 gap-3">
               <div className="relative aspect-[3/4] overflow-hidden rounded-xl">
                 <Image
-                  src="https://usingdiversity.keystone-foundation.org/wp-content/uploads/2020/09/IMG-20200324-WA0012-1024x768.jpg"
+                  src="/editorial/baiga-women-training.jpg"
                   alt="Baiga women training"
                   fill
                   sizes="(min-width: 1024px) 22vw, 50vw"
@@ -225,7 +225,7 @@ export default function HomePage() {
               </div>
               <div className="relative mt-8 aspect-[3/4] overflow-hidden rounded-xl">
                 <Image
-                  src="https://feminisminindia.com/wp-content/uploads/2022/09/Processing-plant-of-federation.jpg"
+                  src="/editorial/processing-plant.jpg"
                   alt="Federation processing plant"
                   fill
                   sizes="(min-width: 1024px) 22vw, 50vw"

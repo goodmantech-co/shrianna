@@ -25,7 +25,7 @@ export const site = {
     { label: "Contact", href: "/contact" },
   ],
   impact: [
-    { stat: "70,000", suffix: "", label: "Millet farmers supported" },
+    { stat: "5,000", suffix: "+", label: "Millet farmer members" },
     { stat: "25+", suffix: "", label: "FPOs united across MP" },
     { stat: "16", suffix: "", label: "Districts of Madhya Pradesh" },
     { stat: "₹7.28", suffix: " Cr", label: "Paid to farmers via DBT (2025–26)" },

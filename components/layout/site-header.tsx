@@ -26,7 +26,7 @@ export function SiteHeader() {
     <>
       <header
         className={`sticky top-0 z-30 transition-all ${
-          scrolled
+          scrolled || mobileOpen
             ? "border-b border-border bg-background/85 backdrop-blur-md"
             : "bg-transparent"
         }`}

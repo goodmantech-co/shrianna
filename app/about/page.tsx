@@ -4,7 +4,12 @@ import { Container, Section, Eyebrow } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { site } from "@/lib/site";
 
-export const metadata = { title: "Our story" };
+export const metadata = {
+  title: "Our Story",
+  description:
+    "Shrianna Federation is a farmer-owned consortium of 25+ FPOs reviving Kodo and Kutki millets across sixteen districts of Madhya Pradesh, under the Rani Durgavati Shrianna Protsahan Yojana.",
+  alternates: { canonical: "/about" },
+};
 
 const board = [
   { name: "Asha Uikey", role: "Director" },
@@ -25,7 +30,7 @@ export default function AboutPage() {
             A federation born of a 500-year-old promise.
           </h1>
           <p className="mt-6 text-xl leading-relaxed text-muted-foreground">
-            Shrianna Federation was incorporated in March 2024 under the
+            Shrianna Federation was incorporated on 9 March 2024 under the
             Rani&nbsp;Durgavati Shrianna Protsahan Yojana — a Madhya Pradesh
             government scheme launched during the International Year of Millets
             (2023–24) and named for the tribal warrior queen Rani Durgavati.
@@ -37,7 +42,7 @@ export default function AboutPage() {
         <Container size="wide">
           <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
             <Image
-              src="https://feminisminindia.com/wp-content/uploads/2022/09/Kodo-Kutki-field-2048x1152.jpg"
+              src="/editorial/kodo-kutki-field.jpg"
               alt="Kodo Kutki field"
               fill
               priority
@@ -102,7 +107,7 @@ export default function AboutPage() {
                 ["₹7.28 Cr", "Paid via DBT"],
               ].map(([stat, label]) => (
                 <div key={label}>
-                  <p className="font-serif text-5xl text-accent">{stat}</p>
+                  <p className="font-serif text-4xl text-accent sm:text-5xl">{stat}</p>
                   <p className="mt-1 text-sm text-secondary-foreground/70">
                     {label}
                   </p>

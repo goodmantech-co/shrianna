@@ -2,7 +2,12 @@ import Image from "next/image";
 import { Container, Section, Eyebrow } from "@/components/ui/container";
 import { site } from "@/lib/site";
 
-export const metadata = { title: "Impact" };
+export const metadata = {
+  title: "Impact",
+  description:
+    "The measurable impact of Shrianna Federation — ~28,300 quintals of Kodo and Kutki procured across sixteen districts of Madhya Pradesh and ₹7.28 Cr paid directly to farmers via DBT.",
+  alternates: { canonical: "/impact" },
+};
 
 const milestones = [
   {
@@ -23,7 +28,7 @@ const milestones = [
   {
     year: "2026",
     title: "2025–26 procurement",
-    body: "~28,300 quintals of Kodo & Kutki procured across 15 districts via the E-Uparjan Portal; ₹7.28 Cr transferred directly to farmers through the JIT/DBT mechanism.",
+    body: "~28,300 quintals of Kodo & Kutki procured across 16 districts via the E-Uparjan Portal; ₹7.28 Cr transferred directly to farmers through the JIT/DBT mechanism.",
   },
   {
     year: "2026",
@@ -118,7 +123,7 @@ export default function ImpactPage() {
             <div className="grid lg:grid-cols-2">
               <div className="relative min-h-[300px]">
                 <Image
-                  src="https://images.bhaskarassets.com/web2images/521/2024/02/12/e3466c22-fd49-49f1-94d0-09da9d644155_1707740807770.jpg"
+                  src="/editorial/procurement.jpg"
                   alt="Kodo Kutki processing plant"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
