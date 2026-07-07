@@ -4,38 +4,45 @@ export type NewsItem = {
   title: string;
   body: string;
   image: string;
+  source?: string;
+  url?: string;
 };
 
 export const news: NewsItem[] = [
   {
-    date: "14 October 2025",
-    type: "Cabinet decision",
+    date: "10 May 2026",
+    type: "In the press · Dainik Bhaskar",
     title:
-      "Cabinet clears the Shrianna Federation framework — ₹80 crore interest-free loan and DBT farmer incentives approved",
-    body: "The State Cabinet approved the operational framework of the Shrianna Federation, including an ₹80 crore interest-free loan from the State Price Stabilization Fund and DBT-based incentives paid directly to registered millet farmers.",
-    image: "/editorial/cabinet-decision.jpg",
+      "Government to sell 13 products made from Kodo, Kutki & Ragi — logo finalised, labelling and packaging next",
+    body: "Dainik Bhaskar reports that 25 FPOs across the Jabalpur, Rewa and Shahdol divisions are processing the federation's Kodo–Kutki into 13 value-added foods, to be sold by the State under the Narmada Millets brand once packaging is ready.",
+    image: "/photos/news-bhaskar.jpg",
+    source: "Dainik Bhaskar",
   },
   {
-    date: "5 October 2025",
-    type: "Scheme update",
+    date: "May 2026",
+    type: "In the press · Raj Express",
     title:
-      "Rani Durgavati Shrianna Protsahan Yojana: farmers to receive a ₹1,000 per quintal incentive via DBT",
-    body: "Field-level instructions issued by the Farmer Welfare Department detail registration windows, procurement centres and a transparent grievance redressal mechanism.",
-    image: "/editorial/kodo-kutki-field.jpg",
+      "Government to make Kodo–Kutki products and sell them under the ‘Narmada Millets’ brand",
+    body: "Raj Express reports the State bought Kutki at ₹3,500 and Kodo at ₹2,500 per quintal with a ₹1,000 per quintal bonus to farmers — around 3,000 MT from about 4,000 growers — and will now process and brand it as Narmada Millets.",
+    image: "/photos/news-rajexpress.jpg",
+    source: "Raj Express",
   },
   {
-    date: "12 February 2025",
-    type: "Operations",
+    date: "March 2026",
+    type: "In the press · ETV Bharat",
     title:
-      "Bhopal mill inaugurated at Beej Bhawan — first batch of 500 quintals of Kodo packed",
-    body: "The federation's own processing unit, with capacity for 8 MT/day of cleaning and de-husking, anchors the Narmada Millets supply chain.",
-    image: "/editorial/procurement.jpg",
+      "MP's Kodo–Kutki becomes ‘Narmada Millets’ — government to sell instant idli, dosa and upma mixes",
+    body: "ETV Bharat reports that kodo and kutki grown in Madhya Pradesh will be turned into ready-to-cook idli, dosa, upma and kheer mixes under the Narmada Millets brand, after the State procured 3,000 metric tonnes through farmer producer organisations.",
+    image: "/photos/narmada-millets-range.jpg",
+    source: "ETV Bharat",
+    url: "https://www.etvbharat.com/hi/state/mp-farmer-producer-organizations-make-narmada-millets-kodo-kutki-italy-dosa-upma-powderer-madhya-pradesh-news-mps26031004830",
   },
   {
-    date: "31 July 2024",
-    type: "Market",
-    title: "Narmada Millets packets hit mainstream Bhopal retailers for the first time",
-    body: "Federation-branded Kodo and Kutki products appear on shelves at select grocers in Bhopal and Indore — the first commercial outing for the Narmada Millets brand.",
-    image: "/editorial/mill-launch.jpg",
+    date: "February 2026",
+    type: "Procurement",
+    title:
+      "First procurement season closes — Kodo & Kutki aggregated from member FPOs across Madhya Pradesh",
+    body: "Across the launch districts, member producer organisations weighed, quality-checked and aggregated the Kharif Kodo–Kutki harvest at block-level centres, with payments routed directly to farmers' bank accounts via DBT.",
+    image: "/photos/procurement-volume.jpg",
   },
 ];

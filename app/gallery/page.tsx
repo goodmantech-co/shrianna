@@ -10,16 +10,16 @@ export const metadata = {
 
 const photos = [
   { src: "/editorial/kodo-kutki-field.jpg", caption: "Kodo–Kutki fields, central Madhya Pradesh", span: "lg:col-span-2 lg:row-span-2" },
-  { src: "/editorial/women-farmer-field.jpg", caption: "A farmer in the harvest" },
-  { src: "/editorial/baiga-women-training.jpg", caption: "Capacity-building with member FPOs" },
-  { src: "/editorial/processing-plant.jpg", caption: "The federation's Bhopal mill" },
-  { src: "/editorial/procurement.jpg", caption: "Procurement at the centre", span: "lg:col-span-2" },
-  { src: "/editorial/mill-launch.jpg", caption: "Narmada Millets, off the line", span: "lg:col-span-2" },
-  { src: "/editorial/cabinet-decision.jpg", caption: "The scheme, cleared by cabinet" },
-  { src: "/editorial/gond-thali.jpg", caption: "Millets on the plate" },
-  { src: "/editorial/recipe-khichdi.jpg", caption: "Millet khichdi" },
-  { src: "/editorial/recipe-poha.jpg", caption: "Millet poha" },
-  { src: "/editorial/recipe-dosa.jpg", caption: "Millet dosa" },
+  { src: "/photos/procurement-centre.jpg", caption: "At the procurement centre" },
+  { src: "/photos/quality-inspection.jpg", caption: "Quality check before purchase" },
+  { src: "/photos/grain-cleaning.jpg", caption: "Cleaning and grading the grain" },
+  { src: "/photos/procurement-volume.jpg", caption: "Aggregated for the federation", span: "lg:col-span-2" },
+  { src: "/photos/real-pack-range.jpg", caption: "Narmada Millets, ready for retail", span: "lg:col-span-2" },
+  { src: "/photos/onboarding-1.jpg", caption: "A farmer joins the federation" },
+  { src: "/photos/expo-stall.jpg", caption: "At the state Krishak Kalyan expo" },
+  { src: "/photos/awareness-rath.jpg", caption: "Awareness drive across the districts" },
+  { src: "/photos/harvest-carry.jpg", caption: "Bringing in the harvest" },
+  { src: "/photos/winnowing.jpg", caption: "Winnowing at the centre" },
 ];
 
 export default function GalleryPage() {

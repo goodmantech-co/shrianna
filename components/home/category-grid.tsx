@@ -22,7 +22,7 @@ const tiles: {
     label: "Instant mixes",
     blurb: "Idli, dosa, khichdi",
     icon: Soup,
-    image: "/products/khichdi-mix.jpeg",
+    image: "/photos/real-pack-range.jpg",
   },
   {
     category: "snack",

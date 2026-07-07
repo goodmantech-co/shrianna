@@ -30,7 +30,7 @@ const stories = [
     quote:
       "Earlier we sold Kutki at the village mandi for whatever the trader offered. Through the federation, the same harvest now earns us double — and the payment lands in our bank within ten days.",
     image:
-      "/editorial/women-farmer-field.jpg",
+      "/photos/farmers-weighing.jpg",
   },
   {
     name: "Asha Uikey",
@@ -38,7 +38,7 @@ const stories = [
     quote:
       "When the cabinet announced the scheme, no one knew how it would actually reach farmers like us. The federation is what made it real.",
     image:
-      "/editorial/baiga-women-training.jpg",
+      "/photos/onboarding-2.jpg",
   },
 ];
 
@@ -128,8 +128,8 @@ export default function FarmersPage() {
           <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-center">
             <div className="relative aspect-square overflow-hidden rounded-2xl">
               <Image
-                src="/editorial/processing-plant.jpg"
-                alt="Federation processing plant"
+                src="/photos/quality-inspection.jpg"
+                alt="Quality inspection of millet grain before purchase"
                 fill
                 sizes="(min-width: 1024px) 40vw, 100vw"
                 className="object-cover"
