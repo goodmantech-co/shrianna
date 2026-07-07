@@ -43,6 +43,7 @@ next-env.d.ts
 
 # screenshots (local QA artifacts)
 /screenshots/
+/.agentworks/
 
 # claude
 .claude/

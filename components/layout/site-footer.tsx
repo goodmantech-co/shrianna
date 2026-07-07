@@ -24,10 +24,17 @@ export function SiteFooter() {
 
           <div>
             <h4 className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-foreground/70">
-              Explore
+              Federation
             </h4>
             <ul className="space-y-2.5 text-sm">
-              {site.nav.slice(0, 4).map((item) => (
+              {[
+                { label: "Our Story", href: "/about" },
+                { label: "Board & Team", href: "/about#leadership" },
+                { label: "Activities", href: "/activities" },
+                { label: "Impact", href: "/impact" },
+                { label: "Reports", href: "/impact#reports" },
+                { label: "The Farmers", href: "/farmers" },
+              ].map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
@@ -42,10 +49,17 @@ export function SiteFooter() {
 
           <div>
             <h4 className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-foreground/70">
-              More
+              Shop & more
             </h4>
             <ul className="space-y-2.5 text-sm">
-              {site.nav.slice(4).map((item) => (
+              {[
+                { label: "Shop Narmada Millets", href: "/shop" },
+                { label: "Gallery", href: "/gallery" },
+                { label: "News", href: "/news" },
+                { label: "Recipes", href: "/recipes" },
+                { label: "Bulk enquiry", href: "/bulk-enquiry" },
+                { label: "Contact", href: "/contact" },
+              ].map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
@@ -55,14 +69,6 @@ export function SiteFooter() {
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link
-                  href="/bulk-enquiry"
-                  className="text-muted-foreground transition-colors hover:text-primary"
-                >
-                  Bulk enquiry
-                </Link>
-              </li>
             </ul>
           </div>
 

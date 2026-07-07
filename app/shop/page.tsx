@@ -28,8 +28,8 @@ export default function ShopPage() {
             </h1>
             <p className="max-w-xl text-base text-muted-foreground sm:text-lg">
               Rice, instant mixes and cookies — milled and baked in Bhopal,
-              traceable to a farmer collective in one of sixteen districts of
-              Madhya Pradesh. Free shipping over ₹999 · COD available.
+              traceable to a farmer collective in Madhya Pradesh. Free shipping
+              over ₹999 · COD available.
             </p>
           </div>
         </Container>

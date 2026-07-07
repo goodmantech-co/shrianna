@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 export const metadata = {
   title: "The Farmers",
   description:
-    "Shrianna Federation pools the harvests of farmer producer organisations across sixteen districts of Madhya Pradesh — over 5,000 mostly-women millet farmers paid fairly via DBT.",
+    "Shrianna Federation pools the harvests of farmer producer organisations across Madhya Pradesh — over 5,000 millet farmers paid fairly via DBT.",
   alternates: { canonical: "/farmers" },
 };
 
@@ -25,7 +25,7 @@ const districts = [
 
 const stories = [
   {
-    name: "Vimala Prajapati",
+    name: "Rukmani Bai",
     village: "Dindori",
     quote:
       "Earlier we sold Kutki at the village mandi for whatever the trader offered. Through the federation, the same harvest now earns us double — and the payment lands in our bank within ten days.",
@@ -34,9 +34,9 @@ const stories = [
   },
   {
     name: "Asha Uikey",
-    village: "Mandla",
+    village: "Raisen",
     quote:
-      "When the cabinet announced the scheme, no one knew how it would actually reach women like us. The federation is what made it real.",
+      "When the cabinet announced the scheme, no one knew how it would actually reach farmers like us. The federation is what made it real.",
     image:
       "/editorial/baiga-women-training.jpg",
   },
@@ -49,13 +49,13 @@ export default function FarmersPage() {
         <Container size="narrow">
           <Eyebrow>The farmers</Eyebrow>
           <h1 className="mt-4 font-serif text-5xl leading-[1.05] tracking-tight sm:text-6xl">
-            5,000+ farmers. Sixteen districts. One federation.
+            5,000+ farmers. Across Madhya Pradesh. One federation.
           </h1>
           <p className="mt-6 text-xl leading-relaxed text-muted-foreground">
             Shrianna pools the harvests of farmer producer organisations
-            across central Madhya Pradesh. Most of our farmer-members are
-            women, most grow on under two hectares, and most have been farming
-            millets longer than India has been a republic.
+            across Madhya Pradesh. Most of our farmer-members grow on under two
+            hectares, and most have been farming millets longer than India has
+            been a republic.
           </p>
         </Container>
       </Section>
@@ -64,8 +64,8 @@ export default function FarmersPage() {
         <Container size="wide">
           <Eyebrow>Where our members farm</Eyebrow>
           <p className="mt-3 max-w-2xl text-muted-foreground">
-            A snapshot of member collectives across the federation&rsquo;s
-            sixteen districts of Madhya Pradesh.
+            A snapshot of member collectives from across the federation&rsquo;s
+            districts in Madhya Pradesh.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {districts.map((d) => (

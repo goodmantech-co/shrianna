@@ -1,51 +1,14 @@
 import Image from "next/image";
 import { Container, Section, Eyebrow } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
+import { news as items } from "@/lib/news";
 
 export const metadata = {
   title: "News & press",
   description:
-    "Latest news from Shrianna Federation — procurement milestones, the Rani Durgavati Shrianna Protsahan Yojana, the Bhopal women-led mill and Narmada Millets in retail.",
+    "Latest news from Shrianna Federation — procurement milestones, the Rani Durgavati Shrianna Protsahan Yojana, the Bhopal millet mill and Narmada Millets in retail.",
   alternates: { canonical: "/news" },
 };
-
-const items = [
-  {
-    date: "14 October 2025",
-    type: "Cabinet decision",
-    title:
-      "Cabinet clears the Shrianna Federation framework — ₹80 crore interest-free loan and DBT farmer incentives approved",
-    body: "The State Cabinet approved the operational framework of the Shrianna Federation, including an ₹80 crore interest-free loan from the State Price Stabilization Fund and DBT-based incentives paid directly to registered millet farmers.",
-    image:
-      "/editorial/cabinet-decision.jpg",
-  },
-  {
-    date: "5 October 2025",
-    type: "Scheme update",
-    title:
-      "Rani Durgavati Shrianna Protsahan Yojana: farmers to receive a ₹1,000 per quintal incentive via DBT",
-    body: "Field-level instructions issued by the Farmer Welfare Department detail registration windows, procurement centres and a transparent grievance redressal mechanism.",
-    image:
-      "/editorial/kodo-kutki-field.jpg",
-  },
-  {
-    date: "12 February 2025",
-    type: "Operations",
-    title:
-      "Bhopal mill inaugurated at Beej Bhawan — first batch of 500 quintals of Kodo packed",
-    body: "The federation's processing unit becomes the only women-led millet mill in the state, with capacity for 8 MT/day of cleaning and de-husking.",
-    image:
-      "/editorial/procurement.jpg",
-  },
-  {
-    date: "31 July 2024",
-    type: "Market",
-    title: "Narmada Millets packets hit mainstream Bhopal retailers for the first time",
-    body: "Federation-branded Kodo and Kutki products appear on shelves at select grocers in Bhopal and Indore — the first commercial outing for the Narmada Millets brand.",
-    image:
-      "/editorial/mill-launch.jpg",
-  },
-];
 
 export default function NewsPage() {
   return (

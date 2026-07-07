@@ -30,6 +30,7 @@ shrianna/
 ├── lib/                — products, site config, utils
 ├── public/             — Static assets incl. logo
 ├── PLAN.md             — Product plan
+├── CHANGELOG.md        — Notable changes per build
 └── IMAGES.md           — Image source list (research)
 ```
 
