@@ -47,12 +47,12 @@ export default function HomePage() {
 
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-muted shadow-xl">
               <Image
-                src="/editorial/kodo-kutki-field.jpg"
-                alt="A Kodo-Kutki field in Madhya Pradesh"
+                src="/editorial/women-farmer-field.jpg"
+                alt="A tribal millet farmer in her field in Madhya Pradesh"
                 fill
                 priority
                 sizes="(min-width: 1024px) 45vw, 100vw"
-                className="object-cover"
+                className="object-cover object-[32%_center]"
               />
             </div>
           </div>

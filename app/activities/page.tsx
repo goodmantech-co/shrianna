@@ -15,37 +15,37 @@ const activities = [
     eyebrow: "01 · Procurement",
     title: "Buying millets directly, at fair prices.",
     body: "We procure Kodo, Kutki and other millets straight from member FPOs at the minimum support price plus a ₹1,000 per quintal incentive — cutting out the traders who once set the terms. Aggregation happens at the block level through the E-Uparjan portal, so every quintal is weighed and recorded transparently.",
-    image: "/editorial/kodo-kutki-field.jpg",
+    image: "/photos/procurement-centre.jpg",
   },
   {
     eyebrow: "02 · Processing",
     title: "Milling and grading under one roof.",
     body: "At the federation's own unit at Beej Bhawan, Bhopal, millets are cleaned, de-husked, graded and packed — with capacity for 8 MT a day. Owning the mill keeps margins inside the federation and lets us hold a consistent quality bar from grain to packet.",
-    image: "/editorial/processing-plant.jpg",
+    image: "/photos/winnowing.jpg",
   },
   {
     eyebrow: "03 · Direct payments",
     title: "Every rupee, straight to a bank account.",
     body: "Payments to farmers are routed through the JIT/DBT mechanism — no cash, no intermediaries, no delays. In FY 2025–26 the federation transferred ₹7.28 crore directly to farmers this way.",
-    image: "/editorial/cabinet-decision.jpg",
+    image: "/photos/onboarding-1.jpg",
   },
   {
     eyebrow: "04 · Capacity building",
     title: "Strengthening the collectives we rely on.",
     body: "We train member producer organisations on quality standards, aggregation, record-keeping and good agricultural practice — so the FPOs grow stronger and more self-reliant with every harvest, supported by ICAR-CIAE and ICAR-IIMR.",
-    image: "/editorial/baiga-women-training.jpg",
+    image: "/photos/awareness-rath.jpg",
   },
   {
     eyebrow: "05 · Narmada Millets",
     title: "Turning raw grain into products people buy.",
     body: "Under the Narmada Millets brand, the federation has developed value-added Kodo and Kutki products — rice, instant mixes, poha and cookies — that bring fair-trade millets onto kitchen shelves across India.",
-    image: "/editorial/mill-launch.jpg",
+    image: "/photos/real-pack-range.jpg",
   },
   {
     eyebrow: "06 · Market linkage",
     title: "Reaching markets a smallholder never could.",
     body: "From neighbourhood grocers to institutional and gifting buyers, the federation opens retail channels that no individual farmer could access alone — and routes the value back to the people who grew the grain.",
-    image: "/editorial/procurement.jpg",
+    image: "/photos/expo-stall.jpg",
   },
 ];
 

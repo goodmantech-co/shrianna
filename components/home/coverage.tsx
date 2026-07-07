@@ -46,8 +46,8 @@ export function Coverage() {
       </div>
       <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
         <Image
-          src="/editorial/procurement.jpg"
-          alt="Millet procurement across Madhya Pradesh"
+          src="/photos/harvest-carry.jpg"
+          alt="A farmer bringing in the millet harvest in Madhya Pradesh"
           fill
           sizes="(min-width: 1024px) 45vw, 100vw"
           className="object-cover"

@@ -132,8 +132,8 @@ export default function ImpactPage() {
             <div className="grid lg:grid-cols-2">
               <div className="relative min-h-[300px]">
                 <Image
-                  src="/editorial/procurement.jpg"
-                  alt="Kodo Kutki processing plant"
+                  src="/photos/procurement-volume.jpg"
+                  alt="Kodo and Kutki aggregated for the federation"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover"

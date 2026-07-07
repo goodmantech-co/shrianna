@@ -27,7 +27,7 @@ const tiles: {
     value: "ready-to-cook",
     label: "Instant mixes",
     icon: Soup,
-    image: "/products/khichdi-mix.jpeg",
+    image: "/photos/real-pack-range.jpg",
   },
   {
     value: "snack",

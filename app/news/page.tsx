@@ -50,6 +50,16 @@ export default function NewsPage() {
                   <p className="mt-3 leading-relaxed text-muted-foreground">
                     {n.body}
                   </p>
+                  {n.url && (
+                    <a
+                      href={n.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
+                    >
+                      Read at {n.source ?? "source"} →
+                    </a>
+                  )}
                 </div>
               </article>
             ))}
