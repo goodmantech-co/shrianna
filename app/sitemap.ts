@@ -7,8 +7,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     "",
     "/about",
+    "/activities",
     "/shop",
     "/farmers",
+    "/gallery",
     "/impact",
     "/recipes",
     "/news",

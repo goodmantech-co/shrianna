@@ -159,7 +159,7 @@ export default async function OGImage() {
                   color: GOLD,
                 }}
               >
-                Grown by women.
+                Grown by farmers.
               </div>
             </div>
             <div
@@ -175,7 +175,7 @@ export default async function OGImage() {
               }}
             >
               A farmer-owned federation reviving Kodo, Kutki and other millets
-              across sixteen districts of Madhya Pradesh.
+              across Madhya Pradesh.
             </div>
 
             {/* Footer line */}

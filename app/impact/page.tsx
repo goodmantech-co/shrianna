@@ -1,11 +1,20 @@
 import Image from "next/image";
+import Link from "next/link";
+import { FileText, ArrowRight } from "lucide-react";
 import { Container, Section, Eyebrow } from "@/components/ui/container";
 import { site } from "@/lib/site";
+
+const reports = [
+  { title: "Annual Report", period: "FY 2025–26" },
+  { title: "Procurement Progress Update", period: "FY 2025–26" },
+  { title: "Member FPO Directory", period: "Updated 2026" },
+  { title: "Audited Financial Statements", period: "FY 2024–25" },
+];
 
 export const metadata = {
   title: "Impact",
   description:
-    "The measurable impact of Shrianna Federation — ~28,300 quintals of Kodo and Kutki procured across sixteen districts of Madhya Pradesh and ₹7.28 Cr paid directly to farmers via DBT.",
+    "The measurable impact of Shrianna Federation — ~28,300 quintals of Kodo and Kutki procured across Madhya Pradesh and ₹7.28 Cr paid directly to farmers via DBT in FY 2025–26.",
   alternates: { canonical: "/impact" },
 };
 
@@ -13,7 +22,7 @@ const milestones = [
   {
     year: "2024",
     title: "Federation incorporated",
-    body: "Shrianna Protsahan Consortium registered on 9 March under the MP Companies Act, with five women smallholders on the founding board.",
+    body: "Shrianna Protsahan Consortium registered on 9 March under the MP Companies Act, with smallholder farmers nominated from member FPOs on the founding board.",
   },
   {
     year: "2024",
@@ -144,6 +153,41 @@ export default function ImpactPage() {
                 </p>
               </div>
             </div>
+          </div>
+        </Container>
+      </Section>
+
+      <Section id="reports" className="scroll-mt-24 pt-0">
+        <Container size="wide">
+          <Eyebrow>Reports & downloads</Eyebrow>
+          <h2 className="mt-3 max-w-2xl font-serif text-4xl tracking-tight sm:text-5xl">
+            Built on transparency.
+          </h2>
+          <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
+            As a farmer-owned, scheme-backed federation, our records are open.
+            Reports are available on request while we move them online.
+          </p>
+
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {reports.map((r) => (
+              <Link
+                key={r.title}
+                href="/contact"
+                className="group flex flex-col rounded-2xl border border-border bg-card p-6 transition-colors hover:border-primary/30"
+              >
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                  <FileText className="h-5 w-5" />
+                </div>
+                <h3 className="mt-5 font-serif text-lg leading-tight">
+                  {r.title}
+                </h3>
+                <p className="mt-1 text-sm text-muted-foreground">{r.period}</p>
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary">
+                  Request a copy
+                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                </span>
+              </Link>
+            ))}
           </div>
         </Container>
       </Section>

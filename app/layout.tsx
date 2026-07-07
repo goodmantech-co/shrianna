@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     siteName: "Shrianna Federation",
     title: "Shrianna Federation — Millets from the heart of Madhya Pradesh",
     description:
-      "Ancient millets. Grown by women. From sixteen districts of MP. Kodo, Kutki and other millets procured at fair prices, sold as Narmada Millets, paid directly via DBT.",
+      "Ancient millets. Grown by farmers. From across Madhya Pradesh. Kodo, Kutki and other millets procured at fair prices, sold as Narmada Millets, paid directly via DBT.",
     url: siteUrl,
     locale: "en_IN",
   },

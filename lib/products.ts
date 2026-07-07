@@ -50,7 +50,7 @@ export const products: Product[] = [
     category: "whole-grain",
     tagline: "Polished Kodo that cooks just like rice.",
     description:
-      "Kodo (Paspalum scrobiculatum) is one of the oldest cultivated grains of central India. Our Kodo is rain-fed and grown by smallholder women farmers across Mandla and Dindori, then de-husked and polished at the federation's Bhopal mill. Cooks like rice in 15 minutes — use it anywhere you'd use white rice.",
+      "Kodo (Paspalum scrobiculatum) is one of the oldest cultivated grains of central India. Our Kodo is rain-fed and grown by smallholder farmers across Mandla and Dindori, then de-husked and polished at the federation's Bhopal mill. Cooks like rice in 15 minutes — use it anywhere you'd use white rice.",
     hero: "/products/kodo-rice.jpeg",
     gallery: ["/products/kodo-rice.jpeg"],
     packSizes: [
@@ -431,19 +431,19 @@ export const products: Product[] = [
     category: "snack",
     tagline: "Pure · Natural · Nutritious — with real cranberries.",
     description:
-      "Crunchy multi-millet cookies baked with Kutki, Kodo and Sawa millets and studded with tangy cranberries. No maida, no palm oil — a wholesome tea-time treat made at a women-run unit in Bhopal.",
+      "Crunchy multi-millet cookies baked with Kutki, Kodo and Sawa millets and studded with tangy cranberries. No maida, no palm oil — a wholesome tea-time treat baked at the federation's Bhopal unit.",
     hero: "/products/cranberry-cookies.jpeg",
     gallery: ["/products/cranberry-cookies.jpeg"],
     packSizes: [
       { weight: "200g", price: 210, mrp: 260 },
       { weight: "400g", price: 400, mrp: 500 },
     ],
-    origin: "Bhopal women-run bakery unit",
+    origin: "Bhopal bakery unit",
     district: "Bhopal",
     benefits: [
       "Baked with three millets, no maida",
       "Real cranberries, no palm oil",
-      "Made by a women-run SHG",
+      "Baked at the federation's Bhopal unit",
       "Wholesome tea-time snack",
     ],
     nutrition: [
@@ -476,12 +476,12 @@ export const products: Product[] = [
       { weight: "200g", price: 200, mrp: 250 },
       { weight: "400g", price: 380, mrp: 480 },
     ],
-    origin: "Bhopal women-run bakery unit",
+    origin: "Bhopal bakery unit",
     district: "Bhopal",
     benefits: [
       "Baked with three millets, no maida",
       "Real almonds, no palm oil",
-      "Made by a women-run SHG",
+      "Baked at the federation's Bhopal unit",
       "Slow-release energy",
     ],
     nutrition: [
@@ -513,12 +513,12 @@ export const products: Product[] = [
       { weight: "200g", price: 200, mrp: 250 },
       { weight: "400g", price: 380, mrp: 480 },
     ],
-    origin: "Bhopal women-run bakery unit",
+    origin: "Bhopal bakery unit",
     district: "Bhopal",
     benefits: [
       "Baked with three millets, no maida",
       "Real chocolate chips, no palm oil",
-      "Made by a women-run SHG",
+      "Baked at the federation's Bhopal unit",
       "Kid-approved way to eat millets",
     ],
     nutrition: [
@@ -559,7 +559,7 @@ export const products: Product[] = [
       "Four bestsellers in one curated gift",
       "Handwoven sabai-grass basket",
       "Includes farmer-collective story card",
-      "Direct income to tribal women",
+      "Direct income to tribal farmers",
     ],
     nutrition: [],
     recipes: [],

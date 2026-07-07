@@ -7,48 +7,83 @@ import { site } from "@/lib/site";
 export const metadata = {
   title: "Our Story",
   description:
-    "Shrianna Federation is a farmer-owned consortium of 25+ FPOs reviving Kodo and Kutki millets across sixteen districts of Madhya Pradesh, under the Rani Durgavati Shrianna Protsahan Yojana.",
+    "Shrianna Federation is a farmer-owned consortium of 25+ FPOs reviving Kodo and Kutki millets across Madhya Pradesh, under the Rani Durgavati Shrianna Protsahan Yojana.",
   alternates: { canonical: "/about" },
 };
 
 const board = [
-  { name: "Asha Uikey", role: "Director" },
-  { name: "Rukmani Bai", role: "Director" },
-  { name: "Vimala Prajapati", role: "Director" },
-  { name: "Mankumari", role: "Director" },
-  { name: "Neelam Pawar", role: "Director" },
-  { name: "Balram Kumar Vishwakarma", role: "Director" },
+  {
+    name: "Mankumari",
+    fpo: "Baiga Chak Mahila Kishan Utpadak Producer Company Limited",
+    district: "Dindori / Mandla",
+  },
+  {
+    name: "Rukmani Bai",
+    fpo: "Kharmer Mahila Kishan Producer Company Limited",
+    district: "Dindori",
+  },
+  {
+    name: "Asha Uikey",
+    fpo: "Bhojpur Ajeevika Farmer Producer Company Limited",
+    district: "Raisen",
+  },
+  {
+    name: "Sumitra Jayswal",
+    fpo: "Singdev Mahila Kishan Producer Company Limited",
+    district: "Singrauli / Sidhi",
+  },
+  {
+    name: "Maya Sukhdeve",
+    fpo: "Satpura Mahila Kishan Producer Company Limited",
+    district: "Chhindwara",
+  },
+  {
+    name: "Krishnadhar Dwivedi",
+    fpo: "Vindhyanchal Crop Producer Company Limited",
+    district: "Rewa",
+  },
+  {
+    name: "Poonam Tiwari",
+    fpo: "Bandhawgarh Krishi Vanopaj Producer Company Limited",
+    district: "Umaria",
+  },
+];
+
+const team = [
+  { name: "Balram Kumar Vishwakarma", role: "Chief Executive Officer" },
+  { name: "Neelesh Dubey", role: "Finance Manager" },
+  { name: "Shashwat Arora", role: "Marketing Manager" },
 ];
 
 export default function AboutPage() {
   return (
     <>
-      <Section className="pb-0">
-        <Container size="narrow">
-          <Eyebrow>Our story</Eyebrow>
-          <h1 className="mt-4 font-serif text-5xl leading-[1.05] tracking-tight sm:text-6xl">
-            A federation born of a 500-year-old promise.
-          </h1>
-          <p className="mt-6 text-xl leading-relaxed text-muted-foreground">
-            Shrianna Federation was incorporated on 9 March 2024 under the
-            Rani&nbsp;Durgavati Shrianna Protsahan Yojana — a Madhya Pradesh
-            government scheme launched during the International Year of Millets
-            (2023–24) and named for the tribal warrior queen Rani Durgavati.
-          </p>
-        </Container>
-      </Section>
-
       <Section>
         <Container size="wide">
-          <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
-            <Image
-              src="/editorial/kodo-kutki-field.jpg"
-              alt="Kodo Kutki field"
-              fill
-              priority
-              sizes="100vw"
-              className="object-cover"
-            />
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <div>
+              <Eyebrow>Our story</Eyebrow>
+              <h1 className="mt-4 font-serif text-5xl leading-[1.05] tracking-tight sm:text-6xl">
+                A federation born of a 500-year-old promise.
+              </h1>
+              <p className="mt-6 text-xl leading-relaxed text-muted-foreground">
+                Shrianna Federation was incorporated on 9 March 2024 under the
+                Rani&nbsp;Durgavati Shrianna Protsahan Yojana — a Madhya Pradesh
+                government scheme launched during the International Year of
+                Millets (2023–24) and named for the tribal warrior queen Rani
+                Durgavati.
+              </p>
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl lg:aspect-[5/4]">
+              <Image
+                src="/editorial/kodo-kutki-field.jpg"
+                alt="Kodo Kutki field"
+                fill
+                priority
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
+            </div>
           </div>
         </Container>
       </Section>
@@ -64,8 +99,8 @@ export default function AboutPage() {
           </p>
           <p>
             Shrianna was created to change that. We are the apex consortium of
-            25+ farmer producer organisations across sixteen districts of Madhya
-            Pradesh, owned and governed by the farmers themselves. We procure
+            25+ farmer producer organisations across Madhya Pradesh, owned and
+            governed by the farmers themselves. We procure
             their millets directly at fair prices, process them in Bhopal, and
             bring them to plates across India under the Narmada Millets brand.
           </p>
@@ -78,7 +113,7 @@ export default function AboutPage() {
         </Container>
       </Section>
 
-      <Section className="bg-secondary text-secondary-foreground">
+      <Section id="scheme" className="scroll-mt-24 bg-secondary text-secondary-foreground">
         <Container size="wide">
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
             <div>
@@ -101,10 +136,10 @@ export default function AboutPage() {
             </div>
             <dl className="grid grid-cols-2 gap-x-6 gap-y-10 self-center">
               {[
-                ["16", "Districts in MP"],
-                ["40,000 MT", "FY 2026–27 target"],
-                ["28,300 qtl", "Procured in 2025–26"],
-                ["₹7.28 Cr", "Paid via DBT"],
+                ["16", "Launch districts (FY 2025–26)"],
+                ["40,000 MT", "Procurement target (FY 2026–27)"],
+                ["28,300 qtl", "Procured (FY 2025–26)"],
+                ["₹7.28 Cr", "Paid via DBT (FY 2025–26)"],
               ].map(([stat, label]) => (
                 <div key={label}>
                   <p className="font-serif text-4xl text-accent sm:text-5xl">{stat}</p>
@@ -118,20 +153,45 @@ export default function AboutPage() {
         </Container>
       </Section>
 
-      <Section>
+      <Section id="leadership" className="scroll-mt-24">
         <Container size="wide">
           <Eyebrow>Leadership</Eyebrow>
           <h2 className="mt-3 max-w-3xl font-serif text-4xl tracking-tight sm:text-5xl">
-            A board of women who grow what they govern.
+            A board drawn from the farmers it serves.
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-            Five of our six directors are tribal women smallholders. They sit on
-            the board because they understand the harvest — and because no
-            federation can call itself farmer-owned otherwise.
+            Our directors are nominated by the member producer companies
+            themselves — smallholder farmers who sit on the board because they
+            understand the harvest, and because no federation can call itself
+            farmer-owned otherwise.
           </p>
 
           <ul className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {board.map((m) => (
+              <li
+                key={m.name}
+                className="rounded-xl border border-border bg-card p-5"
+              >
+                <p className="font-serif text-lg leading-tight">{m.name}</p>
+                <p className="mt-1 text-sm font-medium text-foreground/80">
+                  {m.fpo}
+                </p>
+                <p className="mt-1 text-xs uppercase tracking-[0.12em] text-muted-foreground">
+                  {m.district}
+                </p>
+              </li>
+            ))}
+          </ul>
+
+          <h3 className="mt-14 font-serif text-2xl tracking-tight sm:text-3xl">
+            The team
+          </h3>
+          <p className="mt-3 max-w-2xl text-muted-foreground">
+            The professionals who run the federation&apos;s day-to-day
+            procurement, finance and brand operations from Bhopal.
+          </p>
+          <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {team.map((m) => (
               <li
                 key={m.name}
                 className="rounded-xl border border-border bg-card p-5"

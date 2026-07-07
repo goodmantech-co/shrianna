@@ -3,7 +3,7 @@ import { Star, Quote } from "lucide-react";
 const reviews = [
   {
     quote:
-      "The Kodo rice cooks just like white rice and my kids can't tell the difference. Knowing it comes straight from women farmers makes it taste even better.",
+      "The Kodo rice cooks just like white rice and my kids can't tell the difference. Knowing it comes straight from the farmers who grow it makes it taste even better.",
     name: "Ananya R.",
     city: "Indore",
     product: "Kodo Millet Rice",
