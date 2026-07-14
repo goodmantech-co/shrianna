@@ -25,20 +25,20 @@ const photos = [
 export default function GalleryPage() {
   return (
     <>
-      <Section className="pb-0">
-        <Container size="narrow">
+      <Section variant="hero">
+        <Container size="narrow" className="text-center">
           <Eyebrow>Gallery</Eyebrow>
-          <h1 className="mt-4 font-serif text-5xl leading-[1.05] tracking-tight sm:text-6xl">
+          <h1 className="mt-4 type-h1">
             From the field to the plate.
           </h1>
-          <p className="mt-6 text-xl leading-relaxed text-muted-foreground">
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
             A look at the federation&apos;s work — the harvest, the Bhopal mill
             and the Narmada Millets that come out the other end.
           </p>
         </Container>
       </Section>
 
-      <Section>
+      <Section variant="flush">
         <Container size="wide">
           <div className="grid auto-rows-[220px] grid-flow-dense grid-cols-2 gap-4 lg:grid-cols-4">
             {photos.map((p) => (

@@ -27,21 +27,37 @@ export const site = {
       href: "/about",
       children: [
         { label: "Our Story", href: "/about" },
-        { label: "Board & Team", href: "/about#leadership" },
         { label: "The Scheme", href: "/about#scheme" },
+        { label: "Board & Team", href: "/about#leadership" },
       ],
     },
     { label: "Activities", href: "/activities" },
     { label: "Impact", href: "/impact" },
-    { label: "Farmers", href: "/farmers" },
+    { label: "Farmers & FPOs", href: "/farmers" },
     { label: "Gallery", href: "/gallery" },
     { label: "News", href: "/news" },
     { label: "Contact", href: "/contact" },
   ] as NavItem[],
   vision:
-    "A Madhya Pradesh where the ancient millets of central India are revived, and where smallholder millet farming is dignified, remunerative and resilient.",
-  mission:
-    "To run a farmer-owned umbrella that procures Kodo, Kutki and other millets at fair prices, processes them under one roof, pays farmers directly via DBT, and builds lasting market linkage under the Narmada Millets brand.",
+    "To build a sustainable and inclusive millet-based ecosystem that empowers farmers and FPOs, strengthens market access, enhances nutritional security, and establishes millets as a mainstream food choice across India and global markets.",
+  missionPillars: [
+    {
+      title: "Market Development",
+      body: "Developing sustainable marketing channels and expanding market opportunities for millet-based products in domestic and international markets.",
+    },
+    {
+      title: "Strengthening the FPO Ecosystem",
+      body: "Enhancing institutional capacities of FPOs engaged in millet production, processing, aggregation and marketing.",
+    },
+    {
+      title: "Value Chain Development",
+      body: "Creating an integrated millet value chain covering production, procurement, processing, branding, marketing and export.",
+    },
+    {
+      title: "Brand Promotion",
+      body: "Establishing a strong and credible identity for Madhya Pradesh millets as premium, nutritious and sustainable food products.",
+    },
+  ],
   affiliations: [
     { name: "Government of Madhya Pradesh", logo: "/logos/mp-emblem.svg" },
     {

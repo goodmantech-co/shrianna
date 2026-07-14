@@ -23,10 +23,10 @@ export default function ShopPage() {
             <Badge variant="accent" className="w-fit">
               Narmada Millets · by Shrianna Federation
             </Badge>
-            <h1 className="max-w-3xl font-serif text-4xl leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+            <h1 className="max-w-3xl type-h1">
               The Narmada Millets shop.
             </h1>
-            <p className="max-w-xl text-base text-muted-foreground sm:text-lg">
+            <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
               Rice, instant mixes and cookies — milled and baked in Bhopal,
               traceable to a farmer collective in Madhya Pradesh. Free shipping
               over ₹999 · COD available.
@@ -48,7 +48,7 @@ export default function ShopPage() {
               <Badge variant="accent" className="mb-4">
                 For institutions
               </Badge>
-              <h2 className="font-serif text-3xl leading-tight tracking-tight sm:text-4xl">
+              <h2 className="type-h3">
                 Bulk procurement for schools, canteens &amp; retailers
               </h2>
               <p className="mt-4 text-muted-foreground">

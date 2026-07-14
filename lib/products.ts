@@ -20,6 +20,8 @@ export interface Product {
   tagline: string;
   description: string;
   hero: string;
+  /** "contain" for pack shots whose aspect ratio crops badly under object-cover */
+  imageFit?: "contain";
   gallery: string[];
   packSizes: PackSize[];
   origin: string;
@@ -433,6 +435,7 @@ export const products: Product[] = [
     description:
       "Crunchy multi-millet cookies baked with Kutki, Kodo and Sawa millets and studded with tangy cranberries. No maida, no palm oil — a wholesome tea-time treat baked at the federation's Bhopal unit.",
     hero: "/products/cranberry-cookies.jpeg",
+    imageFit: "contain",
     gallery: ["/products/cranberry-cookies.jpeg"],
     packSizes: [
       { weight: "200g", price: 210, mrp: 260 },
@@ -471,6 +474,7 @@ export const products: Product[] = [
     description:
       "Rich, crunchy multi-millet cookies baked with Kutki, Kodo and Sawa millets and generous slivers of almond. No maida, no palm oil — slow-energy snacking that's genuinely good for you.",
     hero: "/products/almond-cookies.jpeg",
+    imageFit: "contain",
     gallery: ["/products/almond-cookies.jpeg"],
     packSizes: [
       { weight: "200g", price: 200, mrp: 250 },
@@ -508,6 +512,7 @@ export const products: Product[] = [
     description:
       "Multi-millet cookies baked with Kutki, Kodo and Sawa millets and real chocolate chips. The treat that gets children eating millets — no maida, no palm oil.",
     hero: "/products/chocochip-cookies.jpeg",
+    imageFit: "contain",
     gallery: ["/products/chocochip-cookies.jpeg"],
     packSizes: [
       { weight: "200g", price: 200, mrp: 250 },
@@ -548,6 +553,7 @@ export const products: Product[] = [
     description:
       "Our flagship hamper for festivals and corporate gifting. Includes Kodo rice, Little-millet rice, a khichdi mix and a box of multi-millet cookies — packed in a handwoven sabai-grass basket made by artisans in eastern MP. Each hamper carries a card naming the farmer collective behind your grains.",
     hero: "/products/harvest-hamper.jpg",
+    imageFit: "contain",
     gallery: [
       "/products/harvest-hamper.jpg",
       "/editorial/gond-thali.jpg",

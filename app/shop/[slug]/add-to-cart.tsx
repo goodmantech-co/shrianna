@@ -20,7 +20,7 @@ export function AddToCart({ product }: { product: Product }) {
   return (
     <div className="mt-8 space-y-5 rounded-xl border border-border bg-muted/40 p-5">
       <div>
-        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-foreground/70">
+        <p className="mb-3 type-eyebrow text-foreground/70">
           Pack size
         </p>
         <div className="flex flex-wrap gap-2">
@@ -47,7 +47,7 @@ export function AddToCart({ product }: { product: Product }) {
             Price
           </p>
           <div className="flex items-baseline gap-3">
-            <p className="font-serif text-3xl">{formatPrice(pack.price * qty)}</p>
+            <p className="type-h3">{formatPrice(pack.price * qty)}</p>
             {hasMrp && (
               <>
                 <p className="text-sm text-muted-foreground line-through">

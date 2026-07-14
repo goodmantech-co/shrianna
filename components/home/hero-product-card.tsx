@@ -31,7 +31,7 @@ export function HeroProductCard({ product }: { product: Product }) {
         />
       </Link>
       <div className="min-w-0 flex-1">
-        <p className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+        <p className="text-2xs uppercase tracking-[0.16em] text-muted-foreground">
           Bestseller
         </p>
         <Link

@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container, Section, Eyebrow } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
+import { HeroCarousel } from "@/components/home/hero-carousel";
 import { OurWork } from "@/components/home/our-work";
 import { Coverage } from "@/components/home/coverage";
 import { site } from "@/lib/site";
@@ -24,7 +25,7 @@ export default function HomePage() {
                 <span className="h-1.5 w-1.5 rounded-full bg-primary" />
                 Farmer-owned millet federation · Madhya Pradesh
               </Eyebrow>
-              <h1 className="mt-6 font-serif text-5xl leading-[1.05] tracking-tight text-balance sm:text-6xl lg:text-7xl">
+              <h1 className="mt-6 type-display text-balance">
                 Reviving the ancient millets of central India.
               </h1>
               <p className="mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground">
@@ -45,16 +46,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-muted shadow-xl">
-              <Image
-                src="/editorial/women-farmer-field.jpg"
-                alt="A tribal millet farmer in her field in Madhya Pradesh"
-                fill
-                priority
-                sizes="(min-width: 1024px) 45vw, 100vw"
-                className="object-cover object-[32%_center]"
-              />
-            </div>
+            <HeroCarousel />
           </div>
         </Container>
       </section>
@@ -84,31 +76,42 @@ export default function HomePage() {
       {/* Vision & Mission */}
       <Section className="py-16 sm:py-20">
         <Container size="wide">
-          <div className="grid gap-6 lg:grid-cols-2">
-            <div className="rounded-2xl border border-border bg-card p-8 sm:p-10">
-              <Eyebrow>Our vision</Eyebrow>
-              <p className="mt-5 font-serif text-2xl leading-snug tracking-tight sm:text-3xl">
-                {site.vision}
-              </p>
-            </div>
-            <div className="rounded-2xl border border-border bg-card p-8 sm:p-10">
-              <Eyebrow>Our mission</Eyebrow>
-              <p className="mt-5 font-serif text-2xl leading-snug tracking-tight sm:text-3xl">
-                {site.mission}
-              </p>
+          <div className="rounded-2xl border border-border bg-card p-8 sm:p-10">
+            <Eyebrow>Our vision</Eyebrow>
+            <p className="mt-5 max-w-4xl type-h5 leading-relaxed">
+              {site.vision}
+            </p>
+          </div>
+          <div className="mt-6">
+            <Eyebrow>Our mission</Eyebrow>
+            <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {site.missionPillars.map((p, i) => (
+                <div
+                  key={p.title}
+                  className="rounded-2xl border border-border bg-card p-6"
+                >
+                  <p className="font-serif text-2xl text-primary/60">
+                    0{i + 1}
+                  </p>
+                  <h3 className="mt-3 type-h6">{p.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {p.body}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </Container>
       </Section>
 
       {/* Affiliations */}
-      <Section className="py-12">
+      <Section className="py-10 sm:py-12 lg:py-12">
         <Container size="wide">
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:gap-10">
-            <p className="shrink-0 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+          <div className="rounded-2xl border border-border bg-card px-8 py-9">
+            <p className="text-center type-eyebrow text-muted-foreground">
               Backed by
             </p>
-            <ul className="flex flex-wrap items-center gap-x-8 gap-y-5">
+            <ul className="mt-7 flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
               {site.affiliations.map((a) =>
                 a.logo ? (
                   <li key={a.name} className="flex items-center">
@@ -117,13 +120,13 @@ export default function HomePage() {
                       src={a.logo}
                       alt={a.name}
                       title={a.name}
-                      className="h-11 w-auto max-w-[150px] object-contain opacity-80 grayscale transition hover:opacity-100 hover:grayscale-0"
+                      className="h-14 w-auto max-w-[180px] object-contain"
                     />
                   </li>
                 ) : (
                   <li
                     key={a.name}
-                    className="max-w-[13rem] text-sm font-medium leading-tight text-foreground/70"
+                    className="max-w-[13rem] text-center text-sm font-medium leading-tight text-foreground/70"
                   >
                     {a.name}
                   </li>
@@ -139,7 +142,7 @@ export default function HomePage() {
         <Container size="wide">
           <div className="mb-10 max-w-2xl">
             <Eyebrow>By the numbers</Eyebrow>
-            <h2 className="mt-3 font-serif text-3xl tracking-tight sm:text-4xl">
+            <h2 className="mt-3 type-h3">
               Impact you can trace to a bank account.
             </h2>
           </div>
@@ -169,7 +172,7 @@ export default function HomePage() {
         <Container size="wide">
           <div className="mb-10 max-w-2xl">
             <Eyebrow>What we do</Eyebrow>
-            <h2 className="mt-3 font-serif text-3xl tracking-tight sm:text-4xl">
+            <h2 className="mt-3 type-h3">
               One umbrella, from seed to shelf.
             </h2>
             <p className="mt-4 text-lg text-muted-foreground">
@@ -194,7 +197,7 @@ export default function HomePage() {
           <div className="mb-8 flex items-end justify-between gap-6">
             <div>
               <Eyebrow>Recent activities</Eyebrow>
-              <h2 className="mt-3 font-serif text-3xl tracking-tight sm:text-4xl">
+              <h2 className="mt-3 type-h3">
                 What&apos;s happening at Shrianna.
               </h2>
             </div>
@@ -212,7 +215,7 @@ export default function HomePage() {
               >
                 <div className="relative aspect-[16/10]">
                   <Image
-                    src={n.image}
+                    src={n.cardImage ?? n.image}
                     alt={n.title}
                     fill
                     sizes="(min-width: 768px) 30vw, 100vw"
@@ -224,7 +227,7 @@ export default function HomePage() {
                     <Badge variant="muted">{n.type}</Badge>
                     <span>{n.date}</span>
                   </div>
-                  <h3 className="mt-3 font-serif text-lg leading-snug tracking-tight">
+                  <h3 className="mt-3 type-h6">
                     {n.title}
                   </h3>
                 </div>
@@ -246,7 +249,7 @@ export default function HomePage() {
             <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-center">
               <div>
                 <Eyebrow className="text-accent">Narmada Millets</Eyebrow>
-                <h2 className="mt-4 font-serif text-4xl leading-tight tracking-tight sm:text-5xl text-balance">
+                <h2 className="mt-4 type-h2 text-balance">
                   Taste the harvest. Pay the people who grow it.
                 </h2>
                 <p className="mt-5 max-w-xl text-lg leading-relaxed text-primary-foreground/85">

@@ -40,7 +40,7 @@ export function ContactForm() {
     return (
       <div className="flex flex-col items-center justify-center rounded-2xl border border-border bg-card p-10 text-center">
         <CheckCircle2 className="h-12 w-12 text-secondary" />
-        <h2 className="mt-4 font-serif text-2xl">Message sent</h2>
+        <h2 className="mt-4 type-h4">Message sent</h2>
         <p className="mt-2 text-sm text-muted-foreground">
           Thanks for reaching out — we&rsquo;ll get back to you within two working days.
         </p>
@@ -50,12 +50,12 @@ export function ContactForm() {
 
   return (
     <form onSubmit={onSubmit} className="space-y-5 rounded-2xl border border-border bg-card p-8">
-      <h2 className="font-serif text-2xl">Send us a message</h2>
+      <h2 className="type-h4">Send us a message</h2>
       <Field label="Your name" name="name" required />
       <Field label="Email" name="email" type="email" required />
       <Field label="Organisation (optional)" name="organisation" />
       <div>
-        <span className="mb-1.5 block text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
+        <span className="mb-1.5 block type-eyebrow text-muted-foreground">
           Message
         </span>
         <textarea
@@ -78,7 +78,7 @@ function Field({
 }: React.InputHTMLAttributes<HTMLInputElement> & { label: string }) {
   return (
     <label className="block text-sm">
-      <span className="mb-1.5 block text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
+      <span className="mb-1.5 block type-eyebrow text-muted-foreground">
         {label}
       </span>
       <input

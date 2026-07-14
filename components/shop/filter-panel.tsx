@@ -39,7 +39,7 @@ function Group({
 }) {
   return (
     <div className="border-b border-border py-5 first:pt-0">
-      <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+      <p className="mb-3 type-eyebrow text-muted-foreground">
         {title}
       </p>
       {children}
@@ -119,7 +119,7 @@ export function FilterPanel({
   return (
     <div className="flex flex-col">
       <div className="flex items-center justify-between pb-4">
-        <p className="font-serif text-lg">Filters</p>
+        <p className="type-h6">Filters</p>
         <button
           type="button"
           onClick={onClear}

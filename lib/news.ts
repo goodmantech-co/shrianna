@@ -4,6 +4,8 @@ export type NewsItem = {
   title: string;
   body: string;
   image: string;
+  /** Photographic image for compact cards (home) where newspaper scans crop badly */
+  cardImage?: string;
   source?: string;
   url?: string;
 };
@@ -16,6 +18,7 @@ export const news: NewsItem[] = [
       "Government to sell 13 products made from Kodo, Kutki & Ragi — logo finalised, labelling and packaging next",
     body: "Dainik Bhaskar reports that 25 FPOs across the Jabalpur, Rewa and Shahdol divisions are processing the federation's Kodo–Kutki into 13 value-added foods, to be sold by the State under the Narmada Millets brand once packaging is ready.",
     image: "/photos/news-bhaskar.jpg",
+    cardImage: "/photos/grain-cleaning.jpg",
     source: "Dainik Bhaskar",
   },
   {
@@ -25,6 +28,7 @@ export const news: NewsItem[] = [
       "Government to make Kodo–Kutki products and sell them under the ‘Narmada Millets’ brand",
     body: "Raj Express reports the State bought Kutki at ₹3,500 and Kodo at ₹2,500 per quintal with a ₹1,000 per quintal bonus to farmers — around 3,000 MT from about 4,000 growers — and will now process and brand it as Narmada Millets.",
     image: "/photos/news-rajexpress.jpg",
+    cardImage: "/photos/procurement-centre.jpg",
     source: "Raj Express",
   },
   {
@@ -34,6 +38,7 @@ export const news: NewsItem[] = [
       "MP's Kodo–Kutki becomes ‘Narmada Millets’ — government to sell instant idli, dosa and upma mixes",
     body: "ETV Bharat reports that kodo and kutki grown in Madhya Pradesh will be turned into ready-to-cook idli, dosa, upma and kheer mixes under the Narmada Millets brand, after the State procured 3,000 metric tonnes through farmer producer organisations.",
     image: "/photos/narmada-millets-range.jpg",
+    cardImage: "/photos/real-pack-range.jpg",
     source: "ETV Bharat",
     url: "https://www.etvbharat.com/hi/state/mp-farmer-producer-organizations-make-narmada-millets-kodo-kutki-italy-dosa-upma-powderer-madhya-pradesh-news-mps26031004830",
   },

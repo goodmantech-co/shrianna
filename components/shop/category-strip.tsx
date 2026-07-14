@@ -84,7 +84,7 @@ export function CategoryStrip({
               </span>
             </div>
             {count !== undefined && (
-              <span className="relative mt-0.5 text-[11px] text-background/80">
+              <span className="relative mt-0.5 text-2xs text-background/80">
                 {count} {count === 1 ? "product" : "products"}
               </span>
             )}

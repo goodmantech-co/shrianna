@@ -23,7 +23,7 @@ export function Coverage() {
     <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center lg:gap-16">
       <div>
         <Eyebrow>Where we work</Eyebrow>
-        <h2 className="mt-4 font-serif text-3xl leading-tight tracking-tight sm:text-4xl text-balance">
+        <h2 className="mt-4 type-h3 text-balance">
           Across Madhya Pradesh.
         </h2>
         <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted-foreground">

@@ -41,7 +41,7 @@ export function MobileFilterDrawer({
       />
       <div className="absolute inset-y-0 left-0 flex w-[88%] max-w-sm flex-col bg-background shadow-2xl">
         <div className="flex items-center justify-between border-b border-border px-5 py-4">
-          <p className="font-serif text-lg">Filters</p>
+          <p className="type-h6">Filters</p>
           <button
             type="button"
             onClick={onClose}

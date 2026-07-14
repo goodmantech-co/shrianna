@@ -47,18 +47,24 @@ const activities = [
     body: "From neighbourhood grocers to institutional and gifting buyers, the federation opens retail channels that no individual farmer could access alone — and routes the value back to the people who grew the grain.",
     image: "/photos/expo-stall.jpg",
   },
+  {
+    eyebrow: "07 · Research & partnerships",
+    title: "Research, innovation and partnerships.",
+    body: "Working with ICAR-CIAE, ICAR-IIMR and institutional stakeholders across the millet value chain, the federation invests in product innovation, digital platforms for programme management, and strategic partnerships that keep Madhya Pradesh millets competitive — from the field to global markets.",
+    image: "/photos/quality-inspection.jpg",
+  },
 ];
 
 export default function ActivitiesPage() {
   return (
     <>
-      <Section className="pb-0">
-        <Container size="narrow">
+      <Section variant="hero">
+        <Container size="narrow" className="text-center">
           <Eyebrow>Our activities</Eyebrow>
-          <h1 className="mt-4 font-serif text-5xl leading-[1.05] tracking-tight sm:text-6xl">
+          <h1 className="mt-4 type-h1">
             One umbrella, from seed to shelf.
           </h1>
-          <p className="mt-6 text-xl leading-relaxed text-muted-foreground">
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
             The federation handles every link in the millet chain — so that
             smallholder farmers across Madhya Pradesh don&apos;t have to face the
             market alone.
@@ -66,7 +72,7 @@ export default function ActivitiesPage() {
         </Container>
       </Section>
 
-      <Section>
+      <Section variant="flush">
         <Container size="wide">
           <div className="space-y-16 lg:space-y-24">
             {activities.map((a, i) => (
@@ -87,7 +93,7 @@ export default function ActivitiesPage() {
                 </div>
                 <div className={i % 2 === 1 ? "lg:order-1" : ""}>
                   <Eyebrow>{a.eyebrow}</Eyebrow>
-                  <h2 className="mt-4 font-serif text-3xl leading-tight tracking-tight sm:text-4xl">
+                  <h2 className="mt-4 type-h3">
                     {a.title}
                   </h2>
                   <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
@@ -103,7 +109,7 @@ export default function ActivitiesPage() {
       <Section className="pt-0">
         <Container size="wide">
           <div className="flex flex-wrap items-center gap-3 rounded-2xl border border-border bg-card p-8 sm:p-10">
-            <p className="flex-1 font-serif text-2xl leading-snug tracking-tight sm:text-3xl">
+            <p className="flex-1 type-quote">
               See where these activities translate into numbers.
             </p>
             <div className="flex flex-wrap gap-3">

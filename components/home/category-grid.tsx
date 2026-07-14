@@ -60,7 +60,7 @@ export function CategoryGrid() {
           <div className="absolute inset-0 bg-gradient-to-t from-foreground/85 via-foreground/30 to-transparent" />
           <div className="relative text-background">
             <t.icon className="mb-2 h-5 w-5" />
-            <p className="font-serif text-xl leading-tight">{t.label}</p>
+            <p className="type-h5">{t.label}</p>
             <p className="mt-0.5 text-xs text-background/80">{t.blurb}</p>
             <p className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-background/90">
               Shop {countByCategory(t.category)} →

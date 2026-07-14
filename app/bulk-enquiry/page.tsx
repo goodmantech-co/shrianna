@@ -11,19 +11,21 @@ export const metadata = {
 export default function BulkEnquiryPage() {
   return (
     <Section>
-      <Container size="narrow">
+      <Container size="narrow" className="text-center">
         <Eyebrow>For institutions & retailers</Eyebrow>
-        <h1 className="mt-3 font-serif text-5xl leading-[1.05] tracking-tight sm:text-6xl">
+        <h1 className="mt-3 type-h1">
           Procure Shrianna at scale.
         </h1>
-        <p className="mt-6 text-lg text-muted-foreground">
+        <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground">
           We supply schools, hospitals, modern-trade retailers, hotels and
           corporate gifting programmes. MOQ starts at 100&nbsp;kg. Pricing is
           tiered by volume — fill in your requirement below and we&rsquo;ll
           come back within two working days.
         </p>
 
-        <BulkEnquiryForm />
+        <div className="text-left">
+          <BulkEnquiryForm />
+        </div>
       </Container>
     </Section>
   );
