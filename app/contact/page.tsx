@@ -15,11 +15,11 @@ export default function ContactPage() {
     <Section>
       <Container size="wide">
         <Eyebrow>Get in touch</Eyebrow>
-        <h1 className="mt-3 font-serif text-5xl leading-[1.05] tracking-tight sm:text-6xl">
+        <h1 className="mt-3 type-h1">
           We&rsquo;re at Beej Bhawan. Come say hello.
         </h1>
 
-        <div className="mt-16 grid gap-10 lg:grid-cols-[1.1fr_1fr]">
+        <div className="mt-10 grid gap-10 lg:grid-cols-[1.1fr_1fr]">
           <div className="space-y-6">
             <ContactCard icon={MapPin} title="Registered office">
               {site.address.line1}
@@ -84,7 +84,7 @@ function ContactCard({
         <Icon className="h-5 w-5" />
       </div>
       <div>
-        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+        <p className="type-eyebrow text-muted-foreground">
           {title}
         </p>
         <p className="mt-1.5 leading-relaxed">{children}</p>

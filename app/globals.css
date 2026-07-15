@@ -71,6 +71,61 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+@theme {
+  /* Micro size for badges, tags and compact kickers (replaces ad-hoc 9–11px values) */
+  --text-2xs: 0.625rem;
+  --text-2xs--line-height: 0.875rem;
+}
+
+/*
+  Typography scale — the only heading sizes used in the project.
+
+  Headlines (serif):
+    type-display  home hero only
+    type-h1       page hero titles
+    type-h2       major sections / subpage titles
+    type-h3       section titles
+    type-h4       card + form headings
+    type-h5       minor headings (drawers, feature cards)
+    type-h6       compact card titles (product cards, list items)
+    type-quote    large statement paragraphs / pull-quotes
+  Labels:
+    type-eyebrow  uppercase kicker above headings / small section labels
+  Body (sans, plain utilities — no ad-hoc sizes):
+    text-lg   page ledes
+    text-base standard prose
+    text-sm   supporting copy, UI text, meta
+    text-xs   captions, fine print
+    text-2xs  badges, tags, micro labels
+*/
+@utility type-display {
+  @apply font-serif text-5xl leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl;
+}
+@utility type-h1 {
+  @apply font-serif text-5xl leading-[1.05] tracking-tight sm:text-6xl;
+}
+@utility type-h2 {
+  @apply font-serif text-4xl leading-[1.1] tracking-tight sm:text-5xl;
+}
+@utility type-h3 {
+  @apply font-serif text-3xl leading-tight tracking-tight sm:text-4xl;
+}
+@utility type-h4 {
+  @apply font-serif text-2xl leading-tight tracking-tight;
+}
+@utility type-h5 {
+  @apply font-serif text-xl leading-tight;
+}
+@utility type-h6 {
+  @apply font-serif text-lg leading-snug;
+}
+@utility type-quote {
+  @apply font-serif text-2xl leading-snug tracking-tight sm:text-3xl;
+}
+@utility type-eyebrow {
+  @apply text-xs font-semibold uppercase tracking-[0.16em];
+}
+
 @layer base {
   * {
     border-color: var(--border);

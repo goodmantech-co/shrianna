@@ -12,10 +12,10 @@ export function Logo({ className, variant = "full" }: LogoProps) {
       <LogoMark className="h-11 w-11" />
       {variant === "full" && (
         <div className="flex flex-col leading-none">
-          <span className="font-serif text-xl font-medium tracking-tight text-foreground">
+          <span className="type-h5 font-medium tracking-tight text-foreground">
             Shrianna
           </span>
-          <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+          <span className="text-2xs uppercase tracking-[0.18em] text-muted-foreground">
             Federation
           </span>
         </div>

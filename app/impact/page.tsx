@@ -7,7 +7,12 @@ import { site } from "@/lib/site";
 const reports = [
   { title: "Annual Report", period: "FY 2025–26" },
   { title: "Procurement Progress Update", period: "FY 2025–26" },
-  { title: "Member FPO Directory", period: "Updated 2026" },
+  {
+    title: "Member FPO Directory",
+    period: "Updated 2026",
+    href: "/farmers#fpos",
+    cta: "View the directory",
+  },
   { title: "Audited Financial Statements", period: "FY 2024–25" },
 ];
 
@@ -49,21 +54,35 @@ const milestones = [
 export default function ImpactPage() {
   return (
     <>
-      <Section className="pb-0">
-        <Container size="narrow">
-          <Eyebrow>Impact</Eyebrow>
-          <h1 className="mt-4 font-serif text-5xl leading-[1.05] tracking-tight sm:text-6xl">
-            Numbers that turn into harvests.
-          </h1>
-          <p className="mt-6 text-xl leading-relaxed text-muted-foreground">
-            Every figure on this page traces back to a farmer&apos;s bank
-            account, a quintal weighed at a procurement centre, or a grain
-            polished at the Bhopal mill.
-          </p>
+      <Section variant="hero">
+        <Container size="wide">
+          <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_1fr]">
+            <div>
+              <Eyebrow>Impact</Eyebrow>
+              <h1 className="mt-4 type-h1">
+                Numbers that turn into harvests.
+              </h1>
+              <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+                Every figure on this page traces back to a farmer&apos;s bank
+                account, a quintal weighed at a procurement centre, or a grain
+                polished at the Bhopal mill.
+              </p>
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+              <Image
+                src="/photos/procurement-centre.jpg"
+                alt="Kodo and Kutki bags at a procurement centre under the scheme"
+                fill
+                priority
+                sizes="(min-width: 1024px) 45vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+          </div>
         </Container>
       </Section>
 
-      <Section>
+      <Section variant="flush">
         <Container size="wide">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {site.impact.map((s) => (
@@ -91,7 +110,7 @@ export default function ImpactPage() {
           <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr]">
             <div className="lg:sticky lg:top-28 lg:self-start">
               <Eyebrow>Timeline</Eyebrow>
-              <h2 className="mt-3 font-serif text-4xl tracking-tight sm:text-5xl">
+              <h2 className="mt-3 type-h2">
                 How we got here.
               </h2>
               <p className="mt-5 text-muted-foreground">
@@ -112,7 +131,7 @@ export default function ImpactPage() {
                     )}
                   </div>
                   <div className="pb-2">
-                    <h3 className="font-serif text-2xl tracking-tight">
+                    <h3 className="type-h4 tracking-tight">
                       {m.title}
                     </h3>
                     <p className="mt-2 leading-relaxed text-muted-foreground">
@@ -132,8 +151,8 @@ export default function ImpactPage() {
             <div className="grid lg:grid-cols-2">
               <div className="relative min-h-[300px]">
                 <Image
-                  src="/photos/procurement-volume.jpg"
-                  alt="Kodo and Kutki aggregated for the federation"
+                  src="/photos/harvest-carry.jpg"
+                  alt="Winnowing the millet harvest before aggregation"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover"
@@ -141,7 +160,7 @@ export default function ImpactPage() {
               </div>
               <div className="px-8 py-14 text-secondary-foreground sm:px-12 lg:px-14">
                 <Eyebrow className="text-accent">Looking ahead</Eyebrow>
-                <h2 className="mt-4 font-serif text-4xl tracking-tight">
+                <h2 className="mt-4 type-h2">
                   Next: 40,000 MT across about 20 districts.
                 </h2>
                 <p className="mt-5 text-secondary-foreground/80">
@@ -151,6 +170,21 @@ export default function ImpactPage() {
                   and 500 MT of value-added Narmada Millets products, supported
                   by ICAR-CIAE and ICAR-IIMR.
                 </p>
+                <ul className="mt-6 grid gap-x-6 gap-y-2 text-sm text-secondary-foreground/80 sm:grid-cols-2">
+                  {[
+                    "Sustainable markets for millet products",
+                    "Higher incomes and better livelihoods for millet farmers",
+                    "Stronger, economically viable FPOs",
+                    "Growth in millet processing and value addition",
+                    "Nutrition security and climate-resilient agriculture",
+                    "MP as India's leading millet state",
+                  ].map((outcome) => (
+                    <li key={outcome} className="flex gap-2">
+                      <span className="mt-0.5 text-accent">✓</span>
+                      {outcome}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
@@ -160,7 +194,7 @@ export default function ImpactPage() {
       <Section id="reports" className="scroll-mt-24 pt-0">
         <Container size="wide">
           <Eyebrow>Reports & downloads</Eyebrow>
-          <h2 className="mt-3 max-w-2xl font-serif text-4xl tracking-tight sm:text-5xl">
+          <h2 className="mt-3 max-w-2xl type-h2">
             Built on transparency.
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
@@ -172,18 +206,18 @@ export default function ImpactPage() {
             {reports.map((r) => (
               <Link
                 key={r.title}
-                href="/contact"
+                href={r.href ?? "/contact"}
                 className="group flex flex-col rounded-2xl border border-border bg-card p-6 transition-colors hover:border-primary/30"
               >
                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
                   <FileText className="h-5 w-5" />
                 </div>
-                <h3 className="mt-5 font-serif text-lg leading-tight">
+                <h3 className="mt-5 type-h6">
                   {r.title}
                 </h3>
                 <p className="mt-1 text-sm text-muted-foreground">{r.period}</p>
                 <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary">
-                  Request a copy
+                  {r.cta ?? "Request a copy"}
                   <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
                 </span>
               </Link>

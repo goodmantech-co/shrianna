@@ -24,13 +24,24 @@ export function Container({
   );
 }
 
+interface SectionProps extends React.HTMLAttributes<HTMLElement> {
+  /** "hero" = page-title section, no bottom padding; "flush" = first section after a hero, tight top */
+  variant?: "default" | "hero" | "flush";
+}
+
 export function Section({
   className,
+  variant = "default",
   ...props
-}: React.HTMLAttributes<HTMLElement>) {
+}: SectionProps) {
   return (
     <section
-      className={cn("py-16 sm:py-24 lg:py-28", className)}
+      className={cn(
+        "py-12 sm:py-16 lg:py-20",
+        variant === "hero" && "pb-0 sm:pb-0 lg:pb-0",
+        variant === "flush" && "pt-8 sm:pt-10 lg:pt-12",
+        className
+      )}
       {...props}
     />
   );
@@ -43,7 +54,7 @@ export function Eyebrow({
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-primary",
+        "inline-flex items-center gap-2 type-eyebrow text-primary",
         className
       )}
       {...props}

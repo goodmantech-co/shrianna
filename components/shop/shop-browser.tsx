@@ -128,7 +128,7 @@ export function ShopBrowser({ products }: { products: Product[] }) {
                     <SlidersHorizontal className="h-4 w-4" />
                     Filters
                     {filterCount > 0 && (
-                      <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1 text-[11px] font-semibold text-primary-foreground">
+                      <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1 text-2xs font-semibold text-primary-foreground">
                         {filterCount}
                       </span>
                     )}
@@ -219,7 +219,7 @@ export function ShopBrowser({ products }: { products: Product[] }) {
               <div className="mt-8">
                 {visible.length === 0 ? (
                   <div className="rounded-2xl border border-dashed border-border py-20 text-center">
-                    <p className="font-serif text-xl">No millets match that.</p>
+                    <p className="type-h5">No millets match that.</p>
                     <p className="mt-2 text-sm text-muted-foreground">
                       Try clearing a filter or two.
                     </p>

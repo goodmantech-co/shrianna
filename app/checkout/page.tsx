@@ -140,7 +140,7 @@ export default function CheckoutPage() {
         <Container size="narrow">
           <div className="rounded-2xl border border-border bg-card p-12 text-center">
             <CheckCircle2 className="mx-auto h-16 w-16 text-secondary" />
-            <h1 className="mt-6 font-serif text-4xl tracking-tight">
+            <h1 className="mt-6 type-h2">
               Payment received — thank you!
             </h1>
             <p className="mt-4 text-muted-foreground">
@@ -166,7 +166,7 @@ export default function CheckoutPage() {
     <Section>
       <Container size="wide">
         <Eyebrow>Checkout</Eyebrow>
-        <h1 className="mt-3 font-serif text-4xl tracking-tight sm:text-5xl">
+        <h1 className="mt-3 type-h2">
           Almost there.
         </h1>
 
@@ -176,7 +176,7 @@ export default function CheckoutPage() {
             className="space-y-8 rounded-2xl border border-border bg-card p-8"
           >
             <div>
-              <h2 className="mb-4 font-serif text-2xl">Delivery details</h2>
+              <h2 className="mb-4 type-h4">Delivery details</h2>
               <div className="grid gap-4 sm:grid-cols-2">
                 <Field
                   label="Full name"
@@ -228,7 +228,7 @@ export default function CheckoutPage() {
             </div>
 
             <div>
-              <h2 className="mb-4 font-serif text-2xl">Payment</h2>
+              <h2 className="mb-4 type-h4">Payment</h2>
               <div className="flex items-start gap-3 rounded-lg border border-border bg-muted/40 p-6">
                 <Lock className="mt-0.5 h-5 w-5 shrink-0 text-muted-foreground" />
                 <p className="text-sm text-muted-foreground">
@@ -262,8 +262,8 @@ export default function CheckoutPage() {
           </form>
 
           {/* Summary */}
-          <aside className="space-y-5 rounded-2xl border border-border bg-muted/40 p-8">
-            <h2 className="font-serif text-2xl">Order summary</h2>
+          <aside className="space-y-5 self-start rounded-2xl border border-border bg-muted/40 p-8 lg:sticky lg:top-24">
+            <h2 className="type-h4">Order summary</h2>
             {items.length === 0 ? (
               <p className="text-sm text-muted-foreground">
                 Your basket is empty.{" "}
@@ -307,10 +307,10 @@ export default function CheckoutPage() {
               <Row label="Shipping" value="Free" />
             </div>
             <div className="flex items-baseline justify-between border-t border-border pt-5">
-              <span className="text-sm uppercase tracking-[0.16em] text-muted-foreground">
+              <span className="text-xs uppercase tracking-[0.16em] text-muted-foreground">
                 Total
               </span>
-              <span className="font-serif text-3xl">{formatPrice(total)}</span>
+              <span className="type-h3">{formatPrice(total)}</span>
             </div>
           </aside>
         </div>
@@ -326,7 +326,7 @@ function Field({
 }: React.InputHTMLAttributes<HTMLInputElement> & { label: string }) {
   return (
     <label className={`block text-sm ${className ?? ""}`}>
-      <span className="mb-1.5 block text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
+      <span className="mb-1.5 block type-eyebrow text-muted-foreground">
         {label}
       </span>
       <input

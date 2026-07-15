@@ -9,7 +9,7 @@ const items = [
 export function PromoStrip() {
   return (
     <div className="bg-secondary text-secondary-foreground">
-      <div className="mx-auto flex max-w-7xl items-center justify-center gap-3 overflow-hidden px-5 py-2 text-xs sm:gap-8 sm:px-8 sm:text-[13px]">
+      <div className="mx-auto flex max-w-7xl items-center justify-center gap-3 overflow-hidden px-5 py-2 text-xs sm:gap-8 sm:px-8 sm:text-sm">
         {items.map(({ icon: Icon, text }, i) => (
           <div
             key={text}

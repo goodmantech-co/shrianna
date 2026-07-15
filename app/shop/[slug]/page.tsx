@@ -114,7 +114,7 @@ export default async function ProductPage({
           </Link>
 
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
-            <div className="space-y-3">
+            <div className="space-y-3 lg:sticky lg:top-24 lg:self-start">
               <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-muted">
                 <Image
                   src={product.hero}
@@ -122,7 +122,11 @@ export default async function ProductPage({
                   fill
                   priority
                   sizes="(min-width: 1024px) 45vw, 100vw"
-                  className="object-cover"
+                  className={
+                    product.imageFit === "contain"
+                      ? "object-contain p-6"
+                      : "object-cover"
+                  }
                 />
               </div>
               {product.gallery.length > 1 && (
@@ -147,7 +151,7 @@ export default async function ProductPage({
 
             <div className="flex flex-col">
               <Eyebrow>{product.millet}</Eyebrow>
-              <h1 className="mt-4 font-serif text-4xl leading-tight tracking-tight sm:text-5xl">
+              <h1 className="mt-4 type-h2">
                 {product.name}
               </h1>
               <p className="mt-3 text-lg text-muted-foreground">
@@ -175,7 +179,7 @@ export default async function ProductPage({
               <AddToCart product={product} />
 
               <div className="mt-10 border-t border-border pt-8">
-                <h2 className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-foreground/70">
+                <h2 className="mb-3 type-eyebrow text-foreground/70">
                   About this grain
                 </h2>
                 <p className="leading-relaxed text-foreground/80">
@@ -184,7 +188,7 @@ export default async function ProductPage({
               </div>
 
               <div className="mt-8 border-t border-border pt-8">
-                <h2 className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-foreground/70">
+                <h2 className="mb-4 type-eyebrow text-foreground/70">
                   Why this millet
                 </h2>
                 <ul className="space-y-2.5">
@@ -199,14 +203,14 @@ export default async function ProductPage({
 
               {product.nutrition.length > 0 && (
                 <div className="mt-8 border-t border-border pt-8">
-                  <h2 className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-foreground/70">
+                  <h2 className="mb-4 type-eyebrow text-foreground/70">
                     Nutrition · per 100g
                   </h2>
                   <dl className="grid grid-cols-2 gap-y-4 gap-x-6 sm:grid-cols-3">
                     {product.nutrition.map((n) => (
                       <div key={n.label}>
                         <dt className="text-xs text-muted-foreground">{n.label}</dt>
-                        <dd className="font-serif text-lg">{n.value}</dd>
+                        <dd className="type-h6">{n.value}</dd>
                       </div>
                     ))}
                   </dl>
@@ -215,7 +219,7 @@ export default async function ProductPage({
 
               {product.recipes.length > 0 && (
                 <div className="mt-8 border-t border-border pt-8">
-                  <h2 className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-foreground/70">
+                  <h2 className="mb-4 type-eyebrow text-foreground/70">
                     Goes well with
                   </h2>
                   <div className="flex flex-wrap gap-2">
@@ -235,7 +239,7 @@ export default async function ProductPage({
       <Section className="bg-muted/40">
         <Container size="wide">
           <div className="mb-10 flex items-end justify-between">
-            <h2 className="font-serif text-3xl tracking-tight sm:text-4xl">
+            <h2 className="type-h3">
               You might also like
             </h2>
             <Link

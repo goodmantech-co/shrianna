@@ -60,7 +60,7 @@ export function ProductCard({
       {product.packSizes.map((s) => (
         <span
           key={s.weight}
-          className="rounded-md border border-border bg-muted/40 px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground"
+          className="rounded-md border border-border bg-muted/40 px-1.5 py-0.5 text-2xs font-medium text-muted-foreground"
         >
           {s.weight}
         </span>
@@ -84,12 +84,15 @@ export function ProductCard({
             alt={product.name}
             fill
             sizes="160px"
-            className="object-cover transition-transform duration-700 group-hover:scale-105"
+            className={cn(
+              "transition-transform duration-700 group-hover:scale-105",
+              product.imageFit === "contain" ? "object-contain p-2" : "object-cover"
+            )}
           />
           {product.badges?.[0] && (
             <span
               className={cn(
-                "absolute left-2 top-2 rounded-full px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wider shadow-sm",
+                "absolute left-2 top-2 rounded-full px-2 py-0.5 text-2xs font-semibold uppercase tracking-wider shadow-sm",
                 badgeStyle[product.badges[0]]
               )}
             >
@@ -100,12 +103,12 @@ export function ProductCard({
 
         <div className="flex min-w-0 flex-1 flex-col">
           <div className="flex items-center justify-between gap-2">
-            <Badge variant="muted" className="text-[10px]">
+            <Badge variant="muted" className="text-2xs">
               {product.millet}
             </Badge>
             <StarRating rating={product.rating} reviews={product.reviews} />
           </div>
-          <h3 className="mt-2 font-serif text-lg leading-tight">
+          <h3 className="mt-2 type-h6">
             {product.name}
           </h3>
           <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">
@@ -114,7 +117,7 @@ export function ProductCard({
           <div className="mt-2 hidden sm:block">{PackSizes}</div>
           <div className="mt-auto flex items-end justify-between gap-3 pt-3">
             <div>
-              <p className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+              <p className="text-2xs uppercase tracking-[0.16em] text-muted-foreground">
                 From {cheapest.weight} · {product.district}
               </p>
               <div className="mt-0.5">{Price}</div>
@@ -142,7 +145,10 @@ export function ProductCard({
           alt={product.name}
           fill
           sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
+          className={cn(
+            "transition-transform duration-700 group-hover:scale-105",
+            product.imageFit === "contain" ? "object-contain p-4" : "object-cover"
+          )}
         />
 
         <div className="absolute left-3 top-3 flex flex-col items-start gap-1.5">
@@ -150,7 +156,7 @@ export function ProductCard({
             <span
               key={b}
               className={cn(
-                "rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider shadow-sm",
+                "rounded-full px-2.5 py-1 text-2xs font-semibold uppercase tracking-wider shadow-sm",
                 badgeStyle[b]
               )}
             >
@@ -160,7 +166,7 @@ export function ProductCard({
         </div>
 
         {hasMrp && (
-          <div className="absolute right-3 top-3 rounded-full bg-destructive px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-destructive-foreground shadow-sm">
+          <div className="absolute right-3 top-3 rounded-full bg-destructive px-2.5 py-1 text-2xs font-semibold uppercase tracking-wider text-destructive-foreground shadow-sm">
             {discount}% off
           </div>
         )}
@@ -172,13 +178,13 @@ export function ProductCard({
 
       <div className="flex flex-1 flex-col p-5">
         <div className="flex items-center justify-between gap-2">
-          <Badge variant="muted" className="text-[10px]">
+          <Badge variant="muted" className="text-2xs">
             {product.millet}
           </Badge>
           <StarRating rating={product.rating} reviews={product.reviews} />
         </div>
 
-        <h3 className="mt-3 font-serif text-lg leading-tight">{product.name}</h3>
+        <h3 className="mt-3 type-h6">{product.name}</h3>
         <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">
           {product.tagline}
         </p>
@@ -187,7 +193,7 @@ export function ProductCard({
 
         <div className="mt-4 flex items-end justify-between border-t border-border/60 pt-3">
           <div>
-            <p className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+            <p className="text-2xs uppercase tracking-[0.16em] text-muted-foreground">
               From {cheapest.weight}
             </p>
             <div className="mt-0.5">{Price}</div>

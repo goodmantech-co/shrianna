@@ -42,7 +42,7 @@ export function BulkEnquiryForm() {
     return (
       <div className="mt-12 flex flex-col items-center justify-center rounded-2xl border border-border bg-card p-10 text-center">
         <CheckCircle2 className="h-12 w-12 text-secondary" />
-        <h2 className="mt-4 font-serif text-2xl">Enquiry received</h2>
+        <h2 className="mt-4 type-h4">Enquiry received</h2>
         <p className="mt-2 text-sm text-muted-foreground">
           Thanks — our procurement desk will come back to you within two working days.
         </p>
@@ -59,7 +59,7 @@ export function BulkEnquiryForm() {
         <Field label="Phone" name="phone" type="tel" required />
       </div>
       <label className="block text-sm">
-        <span className="mb-1.5 block text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
+        <span className="mb-1.5 block type-eyebrow text-muted-foreground">
           Type of buyer
         </span>
         <select
@@ -75,7 +75,7 @@ export function BulkEnquiryForm() {
         </select>
       </label>
       <div>
-        <span className="mb-1.5 block text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
+        <span className="mb-1.5 block type-eyebrow text-muted-foreground">
           Requirement (volumes, SKUs, timeline)
         </span>
         <textarea
@@ -98,7 +98,7 @@ function Field({
 }: React.InputHTMLAttributes<HTMLInputElement> & { label: string }) {
   return (
     <label className="block text-sm">
-      <span className="mb-1.5 block text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
+      <span className="mb-1.5 block type-eyebrow text-muted-foreground">
         {label}
       </span>
       <input

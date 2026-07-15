@@ -21,7 +21,7 @@ export default function Error({
       <Container size="narrow">
         <div className="rounded-2xl border border-border bg-card p-12 text-center">
           <Eyebrow>Something went wrong</Eyebrow>
-          <h1 className="mt-3 font-serif text-4xl tracking-tight sm:text-5xl">
+          <h1 className="mt-3 type-h2">
             That didn&rsquo;t go as planned.
           </h1>
           <p className="mt-4 text-muted-foreground">

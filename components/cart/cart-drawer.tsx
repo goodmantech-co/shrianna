@@ -46,7 +46,7 @@ export function CartDrawer() {
         <header className="flex items-center justify-between border-b border-border px-6 py-5">
           <div className="flex items-center gap-2">
             <ShoppingBag className="h-5 w-5 text-primary" />
-            <h2 className="font-serif text-xl">Your basket</h2>
+            <h2 className="type-h5">Your basket</h2>
           </div>
           <button
             onClick={close}
@@ -136,7 +136,7 @@ export function CartDrawer() {
           <footer className="border-t border-border px-6 py-5">
             <div className="mb-4 flex items-center justify-between">
               <span className="text-sm text-muted-foreground">Subtotal</span>
-              <span className="font-serif text-2xl">{formatPrice(total)}</span>
+              <span className="type-h4">{formatPrice(total)}</span>
             </div>
             <Button size="lg" className="w-full" onClick={goToCheckout}>
               Checkout

@@ -51,7 +51,7 @@ export function OurWork() {
           <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
             <w.icon className="h-6 w-6" />
           </div>
-          <h3 className="mt-5 font-serif text-xl leading-tight">{w.title}</h3>
+          <h3 className="mt-5 type-h5">{w.title}</h3>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
             {w.body}
           </p>

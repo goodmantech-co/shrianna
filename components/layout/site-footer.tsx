@@ -23,7 +23,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h4 className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-foreground/70">
+            <h4 className="mb-4 type-eyebrow text-foreground/70">
               Federation
             </h4>
             <ul className="space-y-2.5 text-sm">
@@ -33,7 +33,7 @@ export function SiteFooter() {
                 { label: "Activities", href: "/activities" },
                 { label: "Impact", href: "/impact" },
                 { label: "Reports", href: "/impact#reports" },
-                { label: "The Farmers", href: "/farmers" },
+                { label: "Farmers & FPOs", href: "/farmers" },
               ].map((item) => (
                 <li key={item.href}>
                   <Link
@@ -48,7 +48,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h4 className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-foreground/70">
+            <h4 className="mb-4 type-eyebrow text-foreground/70">
               Shop & more
             </h4>
             <ul className="space-y-2.5 text-sm">
@@ -73,7 +73,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h4 className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-foreground/70">
+            <h4 className="mb-4 type-eyebrow text-foreground/70">
               Visit us
             </h4>
             <address className="not-italic text-sm leading-relaxed text-muted-foreground">

@@ -4,6 +4,60 @@ All notable changes to the Shrianna Federation website are recorded here.
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 Dates are in `YYYY-MM-DD`.
 
+## [2026-07-13] — Official profile content integration
+
+- Home: Vision replaced with the official statement; Mission rebuilt as the
+  four official pillars (Market Development, FPO Ecosystem, Value Chain,
+  Brand Promotion) in a numbered card grid.
+- About: story intro now uses the full legal name with "formerly known as
+  'Shrianna Federation'" and credits the establishing department; new
+  **Objectives** section (7 numbered cards, `#objectives`); team intro
+  expanded with the governance structure (CEO + 5 central professionals,
+  5–15 district para-professionals) and management oversight areas.
+- About: featured leadership profiles with photos and bios for the CEO
+  (Balram Kumar Vishwakarma) and Expert Director (Atul Vikram Singh).
+- Activities: added "07 · Research & partnerships" row (ICAR collaboration,
+  innovation, digital platforms).
+- Impact: "Looking ahead" band now lists the six aspired outcomes.
+- Farmers: new "Why millets" background card (nutrition, gluten-free,
+  climate resilience, low water) with benefit tags.
+- Nav: About dropdown reordered to match page flow (Story → Scheme → Board &
+  Team); home "Backed by" logos now full-colour, no grayscale hover.
+
+## [2026-07-11] — Dead-space & layout pass
+
+- Tightened the global section rhythm (`Section` now `py-12/16/20`, was
+  `py-16/24/28`) and added `variant="hero"` / `variant="flush"` so page
+  titles sit ~48px above their first content instead of ~200px; pre-footer
+  voids removed site-wide.
+- Photo heroes (headline left, real federation photo right) on Farmers,
+  Impact, News and About; compact centred heroes on Gallery, Recipes,
+  Activities and Bulk-enquiry.
+- Grid holes fixed: About board → 4 columns (4+3); Farmers districts →
+  4 columns with a new "Represent an FPO?" CTA tile as the 12th cell.
+- Checkout order summary now `self-start` + sticky (no more ~350px of empty
+  card); product-detail image column sticky so it tracks the content column.
+- Home: news cards use photographic `cardImage`s (newspaper scans cropped to
+  blank white before); "Backed by" logos enlarged and centred in a card band.
+- Image hygiene: replaced the competitor "NutriMillet" hamper mockup with the
+  real Narmada Millets range shot; cropped watermark bands out of
+  `millet-poha.jpg` (Alamy), `procurement-volume.jpg` (phone stamp) and
+  `winnowing.jpg` (GPS overlay); wide cookie/hamper pack shots now render
+  `object-contain` via a new `imageFit` product field; mismatched recipe
+  photos replaced with branded millet panels.
+
+## [2026-07-11] — Typography standardisation
+
+- Introduced a single project-wide type scale as Tailwind utilities in
+  `globals.css`: `type-display`, `type-h1` … `type-h6`, `type-quote` for
+  serif headlines and `type-eyebrow` for uppercase kickers/labels.
+- Replaced ~16 ad-hoc headline size combos across all pages/components with
+  the scale; body copy standardised to five tiers (`text-lg` ledes,
+  `text-base` prose, `text-sm` support/UI, `text-xs` captions, new `text-2xs`
+  token for badges/micro-labels).
+- Removed all arbitrary pixel sizes (`text-[9px]`/`[10px]`/`[11px]`/`[13px]`)
+  and unified page-hero lede paragraphs to `text-lg leading-relaxed`.
+
 ## [Unreleased] — `institutional-realign` branch
 
 Realigns the site's structure and vibe with [mbcfpcl.org](https://mbcfpcl.org/)
