@@ -23,6 +23,10 @@ const photos = [
   { src: "/photos/engagements/gcf-workshop.jpg", caption: "GCF climate-foresight workshop, Bhopal" },
   { src: "/photos/engagements/trade-fair-bengaluru.jpg", caption: "Millet & Organic trade fair, Bengaluru" },
   { src: "/photos/engagements/district-visit.jpg", caption: "Value-chain visit at the processing unit" },
+  { src: "/photos/engagements/district-review-meeting.jpg", caption: "Value-chain review with district officials" },
+  { src: "/photos/engagements/kvk-umaria.jpg", caption: "At Krishi Vigyan Kendra, Umaria" },
+  { src: "/photos/engagements/shahdol-agriculture-dept.jpg", caption: "With the Agriculture Department, Shahdol" },
+  { src: "/photos/engagements/visit-team.jpg", caption: "The visiting team on the district tour" },
 ];
 
 // Public Facebook videos covering the federation's work (embedded via the

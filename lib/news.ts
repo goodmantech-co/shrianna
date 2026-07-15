@@ -45,6 +45,13 @@ export const engagements: Engagement[] = [
     image: "/photos/engagements/aiggpa-visit.jpg",
   },
   {
+    tag: "Partnership",
+    title:
+      "Millet production review with JNKVV, department officials and FOLU India",
+    body: "A detailed discussion on millet production and its challenges with Dr G. K. Koutu (Director of Research Services, JNKVV Jabalpur), Mr K. S. Netam (Joint Director Agriculture, Jabalpur), Mr M. K. Nigam (DDA Jabalpur), Team WASSAN and FOLU India — a very useful meeting for shaping the federation's future plan.",
+    image: "/photos/engagements/jnkvv-meeting.jpg",
+  },
+  {
     tag: "Field visit",
     title:
       "Value-chain visit across ten districts with department officials and WASSAN",

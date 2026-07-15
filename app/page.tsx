@@ -8,7 +8,7 @@ import { HeroCarousel } from "@/components/home/hero-carousel";
 import { OurWork } from "@/components/home/our-work";
 import { Coverage } from "@/components/home/coverage";
 import { site } from "@/lib/site";
-import { news } from "@/lib/news";
+import { news, engagements } from "@/lib/news";
 
 export default function HomePage() {
   const recent = news.slice(0, 3);
@@ -188,6 +188,50 @@ export default function HomePage() {
       <Section className="bg-muted/40 py-16 sm:py-20">
         <Container size="wide">
           <Coverage />
+        </Container>
+      </Section>
+
+      {/* Engagements */}
+      <Section className="py-16 sm:py-20">
+        <Container size="wide">
+          <div className="mb-8 flex items-end justify-between gap-6">
+            <div>
+              <Eyebrow>On the ground</Eyebrow>
+              <h2 className="mt-3 type-h3">
+                From workshops to trade fairs.
+              </h2>
+            </div>
+            <Button asChild variant="link" className="hidden sm:inline-flex">
+              <Link href="/news#engagements">
+                All engagements <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            {engagements.slice(0, 3).map((e) => (
+              <Link
+                key={e.title}
+                href="/news#engagements"
+                className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-0.5 hover:shadow-lg"
+              >
+                <div className="relative aspect-[16/9] overflow-hidden">
+                  <Image
+                    src={e.image}
+                    alt={e.title}
+                    fill
+                    sizes="(min-width: 768px) 30vw, 100vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-6">
+                  <Badge variant="muted" className="w-fit">
+                    {e.tag}
+                  </Badge>
+                  <h3 className="mt-3 type-h6">{e.title}</h3>
+                </div>
+              </Link>
+            ))}
+          </div>
         </Container>
       </Section>
 
