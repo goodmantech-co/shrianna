@@ -51,7 +51,7 @@ const activities = [
     eyebrow: "07 · Research & partnerships",
     title: "Research, innovation and partnerships.",
     body: "Working with ICAR-CIAE, ICAR-IIMR and institutional stakeholders across the millet value chain, the federation invests in product innovation, digital platforms for programme management, and strategic partnerships that keep Madhya Pradesh millets competitive — from the field to global markets.",
-    image: "/photos/quality-inspection.jpg",
+    image: "/photos/engagements/icar-ciae-meeting.jpg",
   },
 ];
 

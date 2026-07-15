@@ -20,6 +20,9 @@ const photos = [
   { src: "/photos/awareness-rath.jpg", caption: "Awareness drive across the districts" },
   { src: "/photos/harvest-carry.jpg", caption: "Bringing in the harvest" },
   { src: "/photos/winnowing.jpg", caption: "Winnowing at the centre" },
+  { src: "/photos/engagements/gcf-workshop.jpg", caption: "GCF climate-foresight workshop, Bhopal" },
+  { src: "/photos/engagements/trade-fair-bengaluru.jpg", caption: "Millet & Organic trade fair, Bengaluru" },
+  { src: "/photos/engagements/district-visit.jpg", caption: "Value-chain visit at the processing unit" },
 ];
 
 // Public Facebook videos covering the federation's work (embedded via the
