@@ -70,11 +70,24 @@ const leadership = [
       "Passionate about innovation, he combines strategic planning with practical implementation to deliver scalable solutions. His interests include agri-value chains, food and nutrition security, climate-resilient agriculture and technology-enabled governance.",
     ],
   },
-];
-
-const team = [
-  { name: "Neelesh Dubey", role: "Finance Manager" },
-  { name: "Shashwat Arora", role: "Marketing Manager" },
+  {
+    name: "Neelesh Dubey",
+    role: "Finance Manager",
+    image: "/photos/team/neelesh-dubey.jpg",
+    bio: [
+      "Neelesh Dubey is a seasoned finance professional with over 18 years of cross-sector experience spanning corporate, NGO, FMCG, education, Farmer Producer Organization (FPO) and agriculture consortium sectors.",
+      "With four years of specialized expertise in the FPO and agriculture ecosystem, he excels in financial planning, budgeting, fund management, regulatory compliance and strategic financial governance — driving operational excellence and sustainable organizational growth.",
+    ],
+  },
+  {
+    name: "Shashwat Arora",
+    role: "Marketing Manager",
+    image: "/photos/team/shashwat-arora.jpg",
+    bio: [
+      "Shashwat Arora is a marketing professional with a Postgraduate Diploma in Marketing Management from NMIMS and over four years of experience in sales, marketing and business development.",
+      "He specializes in product launches, market penetration, channel development and team management — driving business growth through strategic market expansion and strong stakeholder relationships.",
+    ],
+  },
 ];
 
 export default function AboutPage() {
@@ -280,18 +293,6 @@ export default function AboutPage() {
               </article>
             ))}
           </div>
-
-          <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-            {team.map((m) => (
-              <li
-                key={m.name}
-                className="rounded-xl border border-border bg-card p-5"
-              >
-                <p className="type-h6">{m.name}</p>
-                <p className="mt-1 text-sm text-muted-foreground">{m.role}</p>
-              </li>
-            ))}
-          </ul>
 
           <div className="mt-14 flex flex-wrap gap-3">
             <Button asChild size="lg">
