@@ -30,8 +30,6 @@ export interface Product {
   nutrition: { label: string; value: string }[];
   recipes: string[];
   dietary: string[];
-  rating: number;
-  reviews: number;
   inStock: boolean;
   featured?: boolean;
   badges?: ProductBadge[];
@@ -78,8 +76,6 @@ export const products: Product[] = [
     ],
     recipes: ["Kodo Pulao", "Kodo Khichdi", "Lemon Kodo Rice"],
     dietary: ["Gluten-free", "Low-GI", "Protein-rich"],
-    rating: 4.8,
-    reviews: 312,
     inStock: true,
     featured: true,
     badges: ["bestseller"],
@@ -118,8 +114,6 @@ export const products: Product[] = [
     ],
     recipes: ["Kutki Pulao", "Kutki Khichdi", "Kutki Kheer"],
     dietary: ["Gluten-free", "Low-GI", "High-iron"],
-    rating: 4.9,
-    reviews: 247,
     inStock: true,
     featured: true,
     badges: ["bestseller"],
@@ -158,8 +152,6 @@ export const products: Product[] = [
     ],
     recipes: ["Sama ke Chawal", "Barnyard Pulao", "Vrat Khichdi"],
     dietary: ["Gluten-free", "Low-GI", "Vegan"],
-    rating: 4.7,
-    reviews: 96,
     inStock: true,
     releasedAt: "2025-12-01",
   },
@@ -196,8 +188,6 @@ export const products: Product[] = [
     ],
     recipes: ["Kanda Poha", "Vegetable Poha", "Poha Chivda"],
     dietary: ["Gluten-free", "Low-GI", "Vegan"],
-    rating: 4.6,
-    reviews: 71,
     inStock: true,
     releasedAt: "2026-01-15",
   },
@@ -234,8 +224,6 @@ export const products: Product[] = [
     ],
     recipes: ["Kanda Poha", "Lemon Poha", "Poha Cutlet"],
     dietary: ["Gluten-free", "High-iron", "Vegan"],
-    rating: 4.6,
-    reviews: 58,
     inStock: true,
     releasedAt: "2026-01-15",
   },
@@ -271,8 +259,6 @@ export const products: Product[] = [
     ],
     recipes: ["Steamed Idli", "Mini Idli", "Idli Manchurian"],
     dietary: ["Gluten-free", "High-fibre", "Vegan"],
-    rating: 4.7,
-    reviews: 134,
     inStock: true,
     featured: true,
     badges: ["bestseller"],
@@ -308,8 +294,6 @@ export const products: Product[] = [
     ],
     recipes: ["Plain Dosa", "Masala Dosa", "Uttapam"],
     dietary: ["Gluten-free", "High-fibre", "Vegan"],
-    rating: 4.7,
-    reviews: 121,
     inStock: true,
     releasedAt: "2026-02-10",
   },
@@ -343,8 +327,6 @@ export const products: Product[] = [
     ],
     recipes: ["Vegetable Upma", "Masala Upma", "Upma Cutlet"],
     dietary: ["Gluten-free", "High-fibre", "Vegan"],
-    rating: 4.6,
-    reviews: 64,
     inStock: true,
     badges: ["new"],
     releasedAt: "2026-04-20",
@@ -379,8 +361,6 @@ export const products: Product[] = [
     ],
     recipes: ["Masala Khichdi", "Vegetable Khichdi", "Bisi Bele style"],
     dietary: ["Gluten-free", "High-fibre", "Protein-rich"],
-    rating: 4.9,
-    reviews: 188,
     inStock: true,
     featured: true,
     badges: ["bestseller"],
@@ -418,8 +398,6 @@ export const products: Product[] = [
     ],
     recipes: ["Veg Dum Biryani", "Paneer Biryani", "Biryani with raita"],
     dietary: ["Gluten-free", "High-fibre", "Vegan"],
-    rating: 4.8,
-    reviews: 73,
     inStock: true,
     badges: ["limited"],
     releasedAt: "2026-03-15",
@@ -458,8 +436,6 @@ export const products: Product[] = [
     ],
     recipes: [],
     dietary: ["No maida", "Multi-millet"],
-    rating: 4.8,
-    reviews: 142,
     inStock: true,
     featured: true,
     badges: ["bestseller", "new"],
@@ -497,8 +473,6 @@ export const products: Product[] = [
     ],
     recipes: [],
     dietary: ["No maida", "Multi-millet"],
-    rating: 4.7,
-    reviews: 118,
     inStock: true,
     badges: ["new"],
     releasedAt: "2026-04-25",
@@ -535,8 +509,6 @@ export const products: Product[] = [
     ],
     recipes: [],
     dietary: ["No maida", "Multi-millet"],
-    rating: 4.8,
-    reviews: 156,
     inStock: true,
     featured: true,
     badges: ["new"],
@@ -570,8 +542,6 @@ export const products: Product[] = [
     nutrition: [],
     recipes: [],
     dietary: ["Gluten-free", "Vegan"],
-    rating: 4.9,
-    reviews: 54,
     inStock: true,
     featured: true,
     badges: ["limited"],
@@ -598,8 +568,6 @@ export const products: Product[] = [
     nutrition: [],
     recipes: [],
     dietary: [],
-    rating: 5,
-    reviews: 0,
     inStock: true,
     hidden: true,
     releasedAt: "2026-06-15",
@@ -612,13 +580,6 @@ export function getProduct(slug: string) {
 
 export function getFeatured() {
   return products.filter((p) => p.featured && !p.hidden);
-}
-
-export function getBestsellers(limit = 6) {
-  return [...products]
-    .filter((p) => !p.hidden)
-    .sort((a, b) => b.reviews - a.reviews)
-    .slice(0, limit);
 }
 
 export function getNewArrivals(limit = 4) {
@@ -749,7 +710,7 @@ export function filterProducts(items: Product[], f: ShopFilters): Product[] {
   });
 }
 
-export type SortOption = "featured" | "price-asc" | "price-desc" | "rating" | "newest";
+export type SortOption = "featured" | "price-asc" | "price-desc" | "newest";
 
 export function sortProducts(items: Product[], sort: SortOption): Product[] {
   const copy = [...items];
@@ -758,8 +719,6 @@ export function sortProducts(items: Product[], sort: SortOption): Product[] {
       return copy.sort((a, b) => startingPrice(a) - startingPrice(b));
     case "price-desc":
       return copy.sort((a, b) => startingPrice(b) - startingPrice(a));
-    case "rating":
-      return copy.sort((a, b) => b.rating - a.rating);
     case "newest":
       return copy.sort(
         (a, b) =>
