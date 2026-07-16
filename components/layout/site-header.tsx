@@ -117,7 +117,9 @@ export function SiteHeader() {
                     </Link>
                     {item.children && (
                       <div className="flex flex-col pb-2">
-                        {item.children.slice(1).map((child) => (
+                        {item.children
+                          .filter((child) => child.href !== item.href)
+                          .map((child) => (
                           <Link
                             key={child.href}
                             href={child.href}

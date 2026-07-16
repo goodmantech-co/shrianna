@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { Container, Section, Eyebrow } from "@/components/ui/container";
+import { PhotoGrid } from "@/components/gallery/photo-grid";
 
 export const metadata = {
   title: "Gallery",
@@ -9,12 +9,12 @@ export const metadata = {
 };
 
 const photos = [
-  { src: "/editorial/kodo-kutki-field.jpg", caption: "Kodo–Kutki fields, central Madhya Pradesh", span: "lg:col-span-2 lg:row-span-2" },
+  { src: "/editorial/kodo-kutki-field.jpg", caption: "Kodo–Kutki fields, central Madhya Pradesh" },
   { src: "/photos/procurement-centre.jpg", caption: "At the procurement centre" },
   { src: "/photos/quality-inspection.jpg", caption: "Quality check before purchase" },
   { src: "/photos/grain-cleaning.jpg", caption: "Cleaning and grading the grain" },
-  { src: "/photos/procurement-volume.jpg", caption: "Aggregated for the federation", span: "lg:col-span-2" },
-  { src: "/photos/real-pack-range.jpg", caption: "Narmada Millets, ready for retail", span: "lg:col-span-2" },
+  { src: "/photos/procurement-volume.jpg", caption: "Aggregated for the federation" },
+  { src: "/photos/real-pack-range.jpg", caption: "Narmada Millets, ready for retail" },
   { src: "/photos/onboarding-1.jpg", caption: "A farmer joins the federation" },
   { src: "/photos/expo-stall.jpg", caption: "At the state Krishak Kalyan expo" },
   { src: "/photos/awareness-rath.jpg", caption: "Awareness drive across the districts" },
@@ -84,31 +84,14 @@ export default function GalleryPage() {
         </Container>
       </Section>
 
-      <Section variant="flush">
+      <Section id="images" variant="flush" className="scroll-mt-24">
         <Container size="wide">
-          <div className="grid auto-rows-[220px] grid-flow-dense grid-cols-2 gap-4 lg:grid-cols-4">
-            {photos.map((p) => (
-              <figure
-                key={p.src}
-                className={`group relative overflow-hidden rounded-2xl bg-muted ${p.span ?? ""}`}
-              >
-                <Image
-                  src={p.src}
-                  alt={p.caption}
-                  fill
-                  sizes="(min-width: 1024px) 25vw, 50vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-sm font-medium text-white opacity-0 transition-opacity group-hover:opacity-100">
-                  {p.caption}
-                </figcaption>
-              </figure>
-            ))}
+          <PhotoGrid photos={photos}>
             <a
               href="https://www.facebook.com/photo/?fbid=1479476466877192&set=a.532328338258681"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-primary/40 bg-primary/5 p-6 text-center transition-colors hover:border-primary hover:bg-primary/10"
+              className="group flex aspect-[4/3] flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-primary/40 bg-primary/5 p-6 text-center transition-colors hover:border-primary hover:bg-primary/10"
             >
               <span className="type-h6 text-primary">
                 More photos on Facebook
@@ -117,7 +100,7 @@ export default function GalleryPage() {
                 View post →
               </span>
             </a>
-          </div>
+          </PhotoGrid>
         </Container>
       </Section>
 

@@ -34,7 +34,14 @@ export const site = {
     { label: "Activities", href: "/activities" },
     { label: "Impact", href: "/impact" },
     { label: "Farmers & FPOs", href: "/farmers" },
-    { label: "Gallery", href: "/gallery" },
+    {
+      label: "Gallery",
+      href: "/gallery",
+      children: [
+        { label: "Images", href: "/gallery#images" },
+        { label: "Videos", href: "/gallery#videos" },
+      ],
+    },
     { label: "News", href: "/news" },
     { label: "Contact", href: "/contact" },
   ] as NavItem[],
