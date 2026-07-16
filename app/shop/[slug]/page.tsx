@@ -5,7 +5,6 @@ import Link from "next/link";
 import { ChevronLeft, MapPin } from "lucide-react";
 import { Container, Section, Eyebrow } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
-import { StarRating } from "@/components/ui/star-rating";
 import { ProductCard } from "@/components/product/product-card";
 import { products, getProduct } from "@/lib/products";
 import { AddToCart } from "./add-to-cart";
@@ -59,15 +58,6 @@ export default async function ProductPage({
     image: `${base}${product.hero}`,
     category: product.category,
     brand: { "@type": "Brand", name: "Narmada Millets" },
-    ...(product.reviews > 0
-      ? {
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: product.rating,
-            reviewCount: product.reviews,
-          },
-        }
-      : {}),
     offers: {
       "@type": "AggregateOffer",
       priceCurrency: "INR",
@@ -159,11 +149,6 @@ export default async function ProductPage({
               </p>
 
               <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2">
-                <StarRating
-                  rating={product.rating}
-                  reviews={product.reviews}
-                  size="md"
-                />
                 {product.dietary.map((d) => (
                   <Badge key={d} variant="outline" className="text-xs">
                     {d}

@@ -31,7 +31,6 @@ import { cn } from "@/lib/utils";
 const sortOptions: { value: SortOption; label: string }[] = [
   { value: "featured", label: "Featured" },
   { value: "newest", label: "Newest first" },
-  { value: "rating", label: "Top rated" },
   { value: "price-asc", label: "Price: low to high" },
   { value: "price-desc", label: "Price: high to low" },
 ];

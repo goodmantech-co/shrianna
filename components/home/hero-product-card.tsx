@@ -4,7 +4,6 @@ import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Plus, Check } from "lucide-react";
-import { StarRating } from "@/components/ui/star-rating";
 import { useCart } from "@/components/cart/cart-provider";
 import { formatPrice } from "@/lib/utils";
 import { startingPrice, type Product } from "@/lib/products";
@@ -41,7 +40,6 @@ export function HeroProductCard({ product }: { product: Product }) {
           {product.name}
         </Link>
         <div className="mt-0.5 flex items-center gap-2">
-          <StarRating rating={product.rating} showCount={false} />
           <span className="text-sm font-semibold tabular-nums">
             {formatPrice(startingPrice(product))}
           </span>

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
-import { StarRating } from "@/components/ui/star-rating";
 import { QuickAdd } from "./quick-add";
 import { formatPrice, cn } from "@/lib/utils";
 import type { Product, ProductBadge } from "@/lib/products";
@@ -106,7 +105,6 @@ export function ProductCard({
             <Badge variant="muted" className="text-2xs">
               {product.millet}
             </Badge>
-            <StarRating rating={product.rating} reviews={product.reviews} />
           </div>
           <h3 className="mt-2 type-h6">
             {product.name}
@@ -181,7 +179,6 @@ export function ProductCard({
           <Badge variant="muted" className="text-2xs">
             {product.millet}
           </Badge>
-          <StarRating rating={product.rating} reviews={product.reviews} />
         </div>
 
         <h3 className="mt-3 type-h6">{product.name}</h3>
