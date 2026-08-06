@@ -11,6 +11,8 @@ export const metadata = {
   description:
     "Buy Narmada Millets online — Kodo and Kutki rice, instant idli/dosa/khichdi mixes and millet cookies, milled in Bhopal and traceable to farmer collectives across Madhya Pradesh. Free shipping over ₹999.",
   alternates: { canonical: "/shop" },
+  // Shop hidden for now — reachable by direct link, but kept out of search.
+  robots: { index: false, follow: false },
 };
 
 export default function ShopPage() {

@@ -286,7 +286,7 @@ export default function HomePage() {
         </Container>
       </Section>
 
-      {/* Shop CTA band */}
+      {/* Bulk enquiry CTA band — replaces the shop CTA while the shop is hidden */}
       <Section className="pb-16 pt-0 sm:pb-20">
         <Container size="wide">
           <div className="relative overflow-hidden rounded-3xl bg-primary px-8 py-16 text-primary-foreground sm:px-16">
@@ -298,14 +298,15 @@ export default function HomePage() {
                 </h2>
                 <p className="mt-5 max-w-xl text-lg leading-relaxed text-primary-foreground/85">
                   Kodo rice, instant mixes and millet cookies — milled and baked
-                  in Bhopal, delivered across India. Every order sends income
-                  straight back to the farmers behind the federation.
+                  in Bhopal. Talk to us about bulk and institutional orders, and
+                  every order sends income straight back to the farmers behind
+                  the federation.
                 </p>
               </div>
               <div className="flex flex-wrap gap-3 lg:justify-end">
                 <Button asChild size="lg" variant="accent">
-                  <Link href="/shop">
-                    Shop Narmada Millets <ArrowRight className="h-4 w-4" />
+                  <Link href="/bulk-enquiry">
+                    Make an enquiry <ArrowRight className="h-4 w-4" />
                   </Link>
                 </Button>
               </div>
