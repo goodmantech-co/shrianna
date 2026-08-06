@@ -49,11 +49,10 @@ export function SiteFooter() {
 
           <div>
             <h4 className="mb-4 type-eyebrow text-foreground/70">
-              Shop & more
+              More
             </h4>
             <ul className="space-y-2.5 text-sm">
               {[
-                { label: "Shop Narmada Millets", href: "/shop" },
                 { label: "Gallery", href: "/gallery" },
                 { label: "News", href: "/news" },
                 { label: "Recipes", href: "/recipes" },

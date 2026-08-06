@@ -27,7 +27,9 @@ export async function generateMetadata({
     title: product.name,
     description: product.tagline,
     alternates: { canonical: `/shop/${slug}` },
-    ...(product.hidden ? { robots: { index: false, follow: false } } : {}),
+    // Shop hidden for now, so every product noindexes — not just `hidden` ones.
+    // Restore the `product.hidden` condition when the shop comes back.
+    robots: { index: false, follow: false },
     openGraph: {
       title: product.name,
       description: product.tagline,

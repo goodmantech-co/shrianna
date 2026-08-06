@@ -2,19 +2,18 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ShoppingBag, Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Logo } from "@/components/brand/logo";
 import { Container } from "@/components/ui/container";
-import { Button } from "@/components/ui/button";
 import { site } from "@/lib/site";
-import { useCart, useCartCount } from "@/components/cart/cart-provider";
+// The shop is hidden for now: no Shop link or cart button in the header. The
+// drawer stays mounted so a direct /shop/<slug> link can still add to basket
+// and check out (add() auto-opens it).
 import { CartDrawer } from "@/components/cart/cart-drawer";
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = React.useState(false);
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const { toggle } = useCart();
-  const count = useCartCount();
 
   React.useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -76,21 +75,6 @@ export function SiteHeader() {
             </nav>
 
             <div className="flex items-center gap-2">
-              <Button asChild size="sm" className="hidden sm:inline-flex">
-                <Link href="/shop">Shop</Link>
-              </Button>
-              <button
-                onClick={toggle}
-                className="relative flex h-10 w-10 items-center justify-center rounded-full hover:bg-foreground/5"
-                aria-label="Open cart"
-              >
-                <ShoppingBag className="h-5 w-5" />
-                {count > 0 && (
-                  <span className="absolute -right-0.5 -top-0.5 flex h-5 min-w-[20px] items-center justify-center rounded-full bg-primary px-1 text-2xs font-semibold text-primary-foreground">
-                    {count}
-                  </span>
-                )}
-              </button>
               <button
                 onClick={() => setMobileOpen((v) => !v)}
                 className="flex h-10 w-10 items-center justify-center rounded-full hover:bg-foreground/5 lg:hidden"
@@ -133,13 +117,6 @@ export function SiteHeader() {
                     )}
                   </div>
                 ))}
-                <Link
-                  href="/shop"
-                  onClick={() => setMobileOpen(false)}
-                  className="mt-3 rounded-lg bg-primary px-4 py-3 text-center text-base font-medium text-primary-foreground"
-                >
-                  Shop Narmada Millets
-                </Link>
               </nav>
             </Container>
           </div>

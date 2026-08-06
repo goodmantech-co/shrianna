@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { X, Minus, Plus, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -62,8 +61,11 @@ export function CartDrawer() {
             <div className="flex h-full flex-col items-center justify-center text-center">
               <ShoppingBag className="mb-4 h-12 w-12 text-muted-foreground/40" />
               <p className="text-muted-foreground">Your basket is empty.</p>
-              <Button asChild variant="link" onClick={close} className="mt-2">
-                <Link href="/shop">Browse millets →</Link>
+              {/* No /shop link here while the shop is hidden — this drawer is
+                  mounted on every page, so the link would be crawlable
+                  site-wide. Restore it when the shop comes back. */}
+              <Button variant="link" onClick={close} className="mt-2">
+                Keep browsing →
               </Button>
             </div>
           ) : (
