@@ -9,7 +9,7 @@ export type Tender = {
   title: string;
   titleHi: string;
   summary: string;
-  /** Submission deadline, India Standard Time, as stated in the tender notice. */
+  /** Submission deadline, India Standard Time, as confirmed by Shrianna (27 Oct 2026). */
   deadline: string;
   deadlineLabel: string;
   facts: { label: string; value: string }[];
@@ -24,8 +24,8 @@ export const tenders: Tender[] = [
     titleHi: "पी.पी. बुने बैग: निविदा आमंत्रण सूचना",
     summary:
       "Quotations are invited for a rate contract to supply 50 kg capacity polypropylene (PP) woven sacks for packaging agricultural commodities, delivered across designated districts of Madhya Pradesh.",
-    deadline: "2026-10-30T17:00:00+05:30",
-    deadlineLabel: "30 October 2026, 5:00 pm",
+    deadline: "2026-10-27T17:00:00+05:30",
+    deadlineLabel: "27 October 2026, 5:00 pm",
     facts: [
       { label: "Quantity", value: "6,50,000 bags (5,20,000 white and 1,30,000 yellow), procured in four lots" },
       { label: "Estimated value", value: "₹150 lakh" },
