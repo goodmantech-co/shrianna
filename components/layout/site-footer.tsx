@@ -55,6 +55,7 @@ export function SiteFooter() {
               {[
                 { label: "Gallery", href: "/gallery" },
                 { label: "News", href: "/news" },
+                { label: "Tenders", href: "/tenders" },
                 { label: "Recipes", href: "/recipes" },
                 { label: "Bulk enquiry", href: "/bulk-enquiry" },
                 { label: "Contact", href: "/contact" },

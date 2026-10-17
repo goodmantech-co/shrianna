@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/impact",
     "/recipes",
     "/news",
+    "/tenders",
     "/contact",
     "/bulk-enquiry",
   ].map((path) => ({
