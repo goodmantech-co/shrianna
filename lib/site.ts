@@ -43,6 +43,7 @@ export const site = {
       ],
     },
     { label: "News", href: "/news" },
+    { label: "Tenders", href: "/tenders" },
     { label: "Contact", href: "/contact" },
   ] as NavItem[],
   vision:
